@@ -1,0 +1,11 @@
+framework module SecureUnlock {
+  umbrella header "SecureUnlock.h"
+
+  export *
+  module * { export * }
+}
+
+module SecureUnlock.Swift {
+    header "SecureUnlock-Swift.h"
+    requires objc
+}
