@@ -1,4 +1,4 @@
-# Kisi secure unlock
+# Kisi Secure Unlock
 
 ## Permissions
 
