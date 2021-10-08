@@ -18,7 +18,7 @@
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		5SzjPfr9qLxcc9AVh+WuC7szR8c=
+		+Sg0Dp/QTGXjaXY/22NcuNhoCt0=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		5SzjPfr9qLxcc9AVh+WuC7szR8c=
+		+Sg0Dp/QTGXjaXY/22NcuNhoCt0=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/arm64.swiftinterface</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		ORXks5sllwJ4urdomvsl6vBE2qY=
+		M0XcjWN5N/zaCW/E6nRoGtlInXs=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		ORXks5sllwJ4urdomvsl6vBE2qY=
+		M0XcjWN5N/zaCW/E6nRoGtlInXs=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64.swiftinterface</key>
 		<data>
@@ -89,7 +89,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uC0cCYOORPVEhUPZtVsppZUyyQc7XoyRzdZNjQd2eyE=
+			Wvi1UWGaaxdr5W7KO7m9/2JCVimNN5TVio8d4SMQ26U=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
@@ -110,7 +110,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uC0cCYOORPVEhUPZtVsppZUyyQc7XoyRzdZNjQd2eyE=
+			Wvi1UWGaaxdr5W7KO7m9/2JCVimNN5TVio8d4SMQ26U=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/arm64.swiftinterface</key>
@@ -131,7 +131,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1lJme81pW/eERNgLHmsJ7rEb14xwu+t4Xliw/e0pn5c=
+			c7dPd6BYwY0nbsjfFSo0ROdNl+i+q31OXHmC2E3Jc0Y=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
@@ -152,7 +152,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1lJme81pW/eERNgLHmsJ7rEb14xwu+t4Xliw/e0pn5c=
+			c7dPd6BYwY0nbsjfFSo0ROdNl+i+q31OXHmC2E3Jc0Y=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64.swiftinterface</key>
