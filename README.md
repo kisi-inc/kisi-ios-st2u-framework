@@ -87,12 +87,12 @@ extension MyClass: SecureUnlockDelegate {
     
     func secureUnlockPhoneKeyForLogin(_ login: Int) -> String? {
         // Phone key callback. 
-        // The phone key is returned when you create a login object. See https://api.kisi.io/docs#tag/Logins/paths/~1logins/post.
+        // The phone key is returned when you create a login object. See https://api.kisi.io/docs#/operations/createLogin.
     }
     
     func secureUnlockFetchCertificate(login: Int, reader: Int, online: Bool, completion: @escaping (Result<String, SecureT2UError>) -> Void) {
-        // If online use certificate that was returned when login was created. See scram credentials property https://api.kisi.io/docs#tag/Logins/paths/~1logins/post.
-        // If offline you need to fetch a short lived offline certificate for the given reader (beacon) id. See offline certificate https://api.kisi.io/docs#tag/SCRAM/paths/~1login~1offline_certificate/post.
+        // If online use certificate that was returned when login was created. See scram credentials property https://api.kisi.io/docs#/operations/createLogin.
+        // If offline you need to fetch a short lived offline certificate for the given reader (beacon) id. See offline certificate https://api.kisi.io/docs#/operations/fetchOfflineCertificate.
     }
 }
 ```
