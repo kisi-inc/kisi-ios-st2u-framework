@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		MMIZTt7Mc+kHOogjXcU5YAH23hs=
+		hYMpWinpTuJ2VpRE9vcT+jCisXQ=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		MMIZTt7Mc+kHOogjXcU5YAH23hs=
+		hYMpWinpTuJ2VpRE9vcT+jCisXQ=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Z8hkpvjeYD6jESzmBvfAtBjF3uE=
+		zPQRG91Hl1W8FmYCojDRtZE73rc=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		Z8hkpvjeYD6jESzmBvfAtBjF3uE=
+		zPQRG91Hl1W8FmYCojDRtZE73rc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -103,7 +103,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			T4ke6Qt+/q1gTlGFfuXEiagzuUe0Tu1r+ds6Qq8k2xo=
+			jurAsqmECjK58gbkE7RULmC9wfSM4y7QCsZEam3wCUI=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/arm64.swiftdoc</key>
@@ -124,7 +124,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			T4ke6Qt+/q1gTlGFfuXEiagzuUe0Tu1r+ds6Qq8k2xo=
+			jurAsqmECjK58gbkE7RULmC9wfSM4y7QCsZEam3wCUI=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -145,7 +145,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8hh7B6pHay09Tvog1/xKd+hV9/L7Z3WjZiNKeg67wLc=
+			Q9GcD6s4mbbAdL1rK3hXPST4+xGLIZMX1xi1HlnY71k=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64.swiftdoc</key>
@@ -166,7 +166,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8hh7B6pHay09Tvog1/xKd+hV9/L7Z3WjZiNKeg67wLc=
+			Q9GcD6s4mbbAdL1rK3hXPST4+xGLIZMX1xi1HlnY71k=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
