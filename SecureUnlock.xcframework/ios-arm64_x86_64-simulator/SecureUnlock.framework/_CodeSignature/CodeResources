@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/SecureUnlock-Swift.h</key>
 		<data>
-		SsxKIgkdd1HLqvhIXOYJMUqUUhU=
+		W0gMxwRGYtFVxgEROj5CEL7iF88=
 		</data>
 		<key>Headers/SecureUnlock.h</key>
 		<data>
@@ -14,55 +14,55 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		5ccAuvPxkhnUZt+01q6zsxgB/Ts=
+		c2jvMkS7IaJfHPJ+nXTYJvS4x6Q=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		CBlChLpJrFmXGfNOrBlKFgyQDhA=
+		qEDQUw7rky9+nFOi63EpEGfcPms=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		jOnjP5hTY6YZEu1Tt1u3qu6ZxRE=
+		hE/BNA1kqgCORYG6k4TIa7WHrK8=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		hYMpWinpTuJ2VpRE9vcT+jCisXQ=
+		w9PWR7vBCJMSqEp5Nw8M8DpHTPo=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		CBlChLpJrFmXGfNOrBlKFgyQDhA=
+		qEDQUw7rky9+nFOi63EpEGfcPms=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		jOnjP5hTY6YZEu1Tt1u3qu6ZxRE=
+		hE/BNA1kqgCORYG6k4TIa7WHrK8=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		hYMpWinpTuJ2VpRE9vcT+jCisXQ=
+		w9PWR7vBCJMSqEp5Nw8M8DpHTPo=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Sz4LRNZIVXwTqVKvtTN7F1GbDMg=
+		IKJZXbjkg0M2esxT/udiEJ3hcBQ=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		JYtCoLhRfkdF6pgh0yP3eejIGVc=
+		euFRLdHsNrxcXCmly9j4wKLOQqM=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		zPQRG91Hl1W8FmYCojDRtZE73rc=
+		vRLqa96pDe0KBXjWwPUjvQixusg=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		Sz4LRNZIVXwTqVKvtTN7F1GbDMg=
+		IKJZXbjkg0M2esxT/udiEJ3hcBQ=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		JYtCoLhRfkdF6pgh0yP3eejIGVc=
+		euFRLdHsNrxcXCmly9j4wKLOQqM=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		zPQRG91Hl1W8FmYCojDRtZE73rc=
+		vRLqa96pDe0KBXjWwPUjvQixusg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -75,7 +75,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Py1Wd1kSRsMJV0NyB3BPJl26FRtUkkmjkOOL7GyDjrk=
+			+zKpo85HGbk+WUJ1OtbmeWtyfRxeAARLysnnIZj40Lg=
 			</data>
 		</dict>
 		<key>Headers/SecureUnlock.h</key>
@@ -89,84 +89,84 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5/zIP4D7rS+90YoBBLY0+/JEZG99tHNY3NVksffWsYM=
+			nrrPQcS9Oyv6QdOZ3WyQb7puOcliBTGAvocEGqOeXN8=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XMmkJmQ0GXxDJ7kDpXAwY16P27myQnJwvRHvlXFEBA8=
+			ksMdvsCTtBqbZpwYh/oDqhej4vVYgyv4mLn2S887otk=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jurAsqmECjK58gbkE7RULmC9wfSM4y7QCsZEam3wCUI=
+			8yBvBhpbHs3eFwpMwT2lBrwsaNVNWG5SxbOIMLMfEGk=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5/zIP4D7rS+90YoBBLY0+/JEZG99tHNY3NVksffWsYM=
+			nrrPQcS9Oyv6QdOZ3WyQb7puOcliBTGAvocEGqOeXN8=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XMmkJmQ0GXxDJ7kDpXAwY16P27myQnJwvRHvlXFEBA8=
+			ksMdvsCTtBqbZpwYh/oDqhej4vVYgyv4mLn2S887otk=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jurAsqmECjK58gbkE7RULmC9wfSM4y7QCsZEam3wCUI=
+			8yBvBhpbHs3eFwpMwT2lBrwsaNVNWG5SxbOIMLMfEGk=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4KjXbiX1iWxnOe2nvIY2+wz3Hloy1Y3Sh4LPXow91ME=
+			UOBz/4JR1sd+RDhhju++rRmqy4Lf5G4xFTyu8qZTxu0=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jdmyiZp9y9QYvW6eO4gdGYg/CNsS6ibLQWgJjnTF8Mg=
+			CQqpsJtUIzK8Qtqw7eApggqmzQX/jfL+McGlDEZQBFQ=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q9GcD6s4mbbAdL1rK3hXPST4+xGLIZMX1xi1HlnY71k=
+			XNaUHSN2CYEqLi/x/uxXpQnWrcEmfVJoezBjqIcljJE=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4KjXbiX1iWxnOe2nvIY2+wz3Hloy1Y3Sh4LPXow91ME=
+			UOBz/4JR1sd+RDhhju++rRmqy4Lf5G4xFTyu8qZTxu0=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jdmyiZp9y9QYvW6eO4gdGYg/CNsS6ibLQWgJjnTF8Mg=
+			CQqpsJtUIzK8Qtqw7eApggqmzQX/jfL+McGlDEZQBFQ=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q9GcD6s4mbbAdL1rK3hXPST4+xGLIZMX1xi1HlnY71k=
+			XNaUHSN2CYEqLi/x/uxXpQnWrcEmfVJoezBjqIcljJE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
