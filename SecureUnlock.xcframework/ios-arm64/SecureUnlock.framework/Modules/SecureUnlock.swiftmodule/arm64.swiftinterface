@@ -13,7 +13,6 @@ import _Concurrency
 public enum SecureT2UError : Swift.Error {
   case invalidTransition
   case invalidData
-  case failedToGenerateRandomData
   case failedToEncrypt
   case failedToDecrypt
   case scramFetchError
@@ -23,6 +22,7 @@ public enum SecureT2UError : Swift.Error {
   case needsDeviceOwnerVerification
   case unexpectedCommand
   case missingDelegate
+  case offsetReadOutOfBounds
   public static func == (a: SecureUnlock.SecureT2UError, b: SecureUnlock.SecureT2UError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -78,7 +78,7 @@ extension SecureUnlock.BeaconManager : CoreLocation.CLLocationManagerDelegate {
   @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didRangeBeacons beacons: [CoreLocation.CLBeacon], in region: CoreLocation.CLBeaconRegion)
   @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, rangingBeaconsDidFailFor region: CoreLocation.CLBeaconRegion, withError error: Swift.Error)
 }
-@objc @_inheritsConvenienceInitializers final public class SecureUnlockManager : ObjectiveC.NSObject {
+@objc @_hasMissingDesignatedInitializers final public class SecureUnlockManager : ObjectiveC.NSObject {
   @objc public static let shared: SecureUnlock.SecureUnlockManager
   weak final public var delegate: SecureUnlock.SecureUnlockDelegate? {
     get
@@ -86,7 +86,6 @@ extension SecureUnlock.BeaconManager : CoreLocation.CLLocationManagerDelegate {
   }
   @objc final public func start()
   @objc final public func stop()
-  @objc override dynamic public init()
   @objc deinit
 }
 extension SecureUnlock.SecureUnlockManager : CoreBluetooth.CBPeripheralManagerDelegate {
@@ -98,8 +97,8 @@ extension SecureUnlock.SecureUnlockManager : CoreBluetooth.CBPeripheralManagerDe
   @objc final public func peripheralManager(_ peripheral: CoreBluetooth.CBPeripheralManager, willRestoreState dict: [Swift.String : Any])
 }
 public protocol SecureUnlockDelegate : AnyObject {
-  func secureUnlockSuccess(online: Swift.Bool)
-  func secureUnlockFailure(error: SecureUnlock.SecureT2UError)
+  func secureUnlockSuccess(online: Swift.Bool, duration: Foundation.TimeInterval)
+  func secureUnlockFailure(error: SecureUnlock.SecureT2UError, duration: Foundation.TimeInterval)
   func secureUnlockLoginIDForOrganization(_ organization: Swift.Int?) -> Swift.Int?
   func secureUnlockPhoneKeyForLogin(_ login: Swift.Int) -> Swift.String?
   func secureUnlockFetchCertificate(login: Swift.Int, reader: Swift.Int, online: Swift.Bool, completion: @escaping (Swift.Result<Swift.String, SecureUnlock.SecureT2UError>) -> Swift.Void)

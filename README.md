@@ -70,14 +70,16 @@ You need to implemented the SecureUnlockDelegate protocol.
 
 ```swift
 extension MyClass: SecureUnlockDelegate {
-    func secureUnlockSuccess(online: Bool) {
+    func secureUnlockSuccess(online: Bool, duration: TimeInterval) {
         // Callback when unlock succeeds.
         // Online parameter indicates if it was an online or offline unlock.
+        // Duration parameter tells how long the unlock took
     }
     
-    func secureUnlockFailure(error: SecureT2UError) {
-        // Login id callback. 
-        // If you only support 1 login you can ignore the organization property and simply return the login id for the logged in user. Otherwise you must find the login id for the given organization.
+    func secureUnlockFailure(error: SecureT2UError, duration: TimeInterval) {
+        // Unlock failed
+        // Note that if because of needsDeviceOwnerVerification you should prompt user to unlock phone or setup passcode.
+        // Duration parameter tells how long the unlock took
     }
     
     func secureUnlockLoginIDForOrganization(_ organization: Int?) -> Int? {

@@ -236,6 +236,7 @@ SWIFT_CLASS("_TtC12SecureUnlock13BeaconManager")
 
 
 
+
 @interface NSNotification (SWIFT_EXTENSION(SecureUnlock))
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull BeaconManagerDidEnterRegionNotification;)
 + (NSNotificationName _Nonnull)BeaconManagerDidEnterRegionNotification SWIFT_WARN_UNUSED_RESULT;
@@ -250,9 +251,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SecureUnlock
 + (SecureUnlockManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 - (void)start;
 - (void)stop;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
 
 @class CBPeripheralManager;
 @class CBATTRequest;
