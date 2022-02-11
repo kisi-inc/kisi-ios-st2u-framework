@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/SecureUnlock-Swift.h</key>
 		<data>
-		ttCRSzfA3fqrvrKZwOSpzNFLTc8=
+		Os+OvOn79NQhl1FWY1VzXRtLUV0=
 		</data>
 		<key>Headers/SecureUnlock.h</key>
 		<data>
@@ -14,31 +14,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		UwqLMuw11vH8qtQWUXK6Ux++n0Q=
+		llWGYazZwlfilP2y2GMsYHvfRfo=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		ZU8axXF0hJaT3riFwlRCqF2RAwE=
+		Hafng9KRopwxj8nb05yeYt7yzpI=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		J8unAW11pjMn55aK5qIb/9YQSrc=
+		OO8yUx7JtpIABilXMof3g8WfpKU=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		h9tH9CdzQlquQAU60NbpZn67Jkw=
+		MPNYDSQUX+mKytPZR2szhjcWN3k=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		ZU8axXF0hJaT3riFwlRCqF2RAwE=
+		Hafng9KRopwxj8nb05yeYt7yzpI=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		J8unAW11pjMn55aK5qIb/9YQSrc=
+		OO8yUx7JtpIABilXMof3g8WfpKU=
 		</data>
 		<key>Modules/SecureUnlock.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		h9tH9CdzQlquQAU60NbpZn67Jkw=
+		MPNYDSQUX+mKytPZR2szhjcWN3k=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -51,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7iHTuqTd4i3ci7GfOyfK/JFPBmQQviehdCJt7eRGGAo=
+			35brDVsLvbwX02qfhdBm9C0Isp7boel/4fsRGlKrurk=
 			</data>
 		</dict>
 		<key>Headers/SecureUnlock.h</key>
@@ -65,42 +65,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1qpisK/6iPvPceQ/hAhyitvpj2Xq0WkyQMbvVA+lu1o=
+			RmZMsBn6myS7EsKMrbiVff4DlOzXfVGZ/ydtN5VvRPw=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UesWgmYkcjCEn2zC3U3mkrIQk3CiApaSbPmP5DKkllw=
+			brM6TNxbM6l0LaP2yp5rA2Nb6Fr4Niwgb3XABI4h43Y=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CPP3hCV+6m9uozO3uXD0V7BTWKm8cgmvUzlQHG/ZhGA=
+			xHLlHenifWNl90UMqmTizi3JIee9XTCizStdshwqu3Y=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1qpisK/6iPvPceQ/hAhyitvpj2Xq0WkyQMbvVA+lu1o=
+			RmZMsBn6myS7EsKMrbiVff4DlOzXfVGZ/ydtN5VvRPw=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UesWgmYkcjCEn2zC3U3mkrIQk3CiApaSbPmP5DKkllw=
+			brM6TNxbM6l0LaP2yp5rA2Nb6Fr4Niwgb3XABI4h43Y=
 			</data>
 		</dict>
 		<key>Modules/SecureUnlock.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CPP3hCV+6m9uozO3uXD0V7BTWKm8cgmvUzlQHG/ZhGA=
+			xHLlHenifWNl90UMqmTizi3JIee9XTCizStdshwqu3Y=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

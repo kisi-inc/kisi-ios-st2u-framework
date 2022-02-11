@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
-// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SecureUnlock
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SecureUnlock
 import CommonCrypto
 import CoreBluetooth
 import CoreLocation
@@ -53,13 +53,15 @@ public struct BeaconLock : Swift.Identifiable, Swift.Equatable, Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-@objc @_hasMissingDesignatedInitializers final public class BeaconManager : ObjectiveC.NSObject {
+@objc @_hasMissingDesignatedInitializers @available(iOS 13.0, *)
+final public class BeaconManager : ObjectiveC.NSObject {
   public static let shared: SecureUnlock.BeaconManager
   final public var enteredBeaconsLocks: [CoreLocation.CLBeaconRegion : [SecureUnlock.BeaconLock]] {
     get
   }
   @objc deinit
 }
+@available(iOS 13.0, *)
 extension SecureUnlock.BeaconManager {
   final public func startMonitoring()
   final public func stopMonitoring()
@@ -68,6 +70,7 @@ extension SecureUnlock.BeaconManager {
   final public func isNearbyLock(_ id: Swift.Int) -> Swift.Bool
   final public func timeBasedOneTimePasswordForLock(_ id: Swift.Int) -> Swift.Int?
 }
+@available(iOS 13.0, *)
 extension SecureUnlock.BeaconManager : CoreLocation.CLLocationManagerDelegate {
   @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
   @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: Swift.Error)
@@ -78,7 +81,8 @@ extension SecureUnlock.BeaconManager : CoreLocation.CLLocationManagerDelegate {
   @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didRangeBeacons beacons: [CoreLocation.CLBeacon], in region: CoreLocation.CLBeaconRegion)
   @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, rangingBeaconsDidFailFor region: CoreLocation.CLBeaconRegion, withError error: Swift.Error)
 }
-@objc @_hasMissingDesignatedInitializers final public class SecureUnlockManager : ObjectiveC.NSObject {
+@objc @_hasMissingDesignatedInitializers @available(iOS 13.0, *)
+final public class SecureUnlockManager : ObjectiveC.NSObject {
   @objc public static let shared: SecureUnlock.SecureUnlockManager
   weak final public var delegate: SecureUnlock.SecureUnlockDelegate? {
     get
@@ -88,6 +92,7 @@ extension SecureUnlock.BeaconManager : CoreLocation.CLLocationManagerDelegate {
   @objc final public func stop()
   @objc deinit
 }
+@available(iOS 13.0, *)
 extension SecureUnlock.SecureUnlockManager : CoreBluetooth.CBPeripheralManagerDelegate {
   @objc final public func peripheralManagerDidUpdateState(_ peripheral: CoreBluetooth.CBPeripheralManager)
   @objc final public func peripheralManager(_ peripheral: CoreBluetooth.CBPeripheralManager, didReceiveRead request: CoreBluetooth.CBATTRequest)
