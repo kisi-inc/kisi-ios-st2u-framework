@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>bluetooth-peripheral</string>
+		<string>fetch</string>
+		<string>location</string>
+	</array>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>But we really need always for the best performance</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Can I haz please?</string>
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>BLE FTW!.</string>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>Give me or else</string>
+</dict>
+</plist>
