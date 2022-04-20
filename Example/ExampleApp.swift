@@ -66,16 +66,15 @@ class SecureUnlockDataProvider: SecureUnlockDelegate {
         }
     }
     
-    func secureUnlockLoginIDForOrganization(_ organization: Int?) -> Int? {
-        return AuthStorage.shared.currentLogin()?.id
+    func secureUnlockClientID() -> Int {
+        return 0 // Request proper id by emailing sdks@kisi.io. This is so we can better help you debug any issues you might run into.
     }
     
-    func secureUnlockPhoneKeyForLogin(_ login: Int) -> String? {
-        return AuthStorage.shared.currentLogin()?.scram.key
-    }
-    
-    func secureUnlockFetchCertificate(login: Int, reader: Int, online: Bool, completion: @escaping (Result<String, SecureT2UError>) -> Void) {
-        // NOTE: We aren't handling the offline case. But a future version of the secure unlock package will handle that for you.
-        completion(.success(AuthStorage.shared.currentLogin()?.scram.certificate ?? ""))
+    func secureUnlockLoginForOrganization(_ organization: Int?) -> SecureUnlock.Login? {
+        // If you app supports being signed in to multiple organization use the id to lookup the corresponding login.
+        // otherwise just return the login you have.
+        guard let login = AuthStorage.shared.currentLogin() else { return nil }
+        
+        return .init(id: login.id, token: login.secret, key: login.scram.key, certificate: login.scram.certificate)
     }
 }
