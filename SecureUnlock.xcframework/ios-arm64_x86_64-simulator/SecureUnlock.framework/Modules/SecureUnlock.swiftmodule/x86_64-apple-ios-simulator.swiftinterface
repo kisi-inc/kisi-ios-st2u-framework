@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
 // swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SecureUnlock
 import CommonCrypto
 import CoreBluetooth
@@ -12,7 +12,10 @@ import Swift
 import _Concurrency
 public enum SecureT2UError : Swift.Error {
   case invalidTransition
-  case invalidData
+  case orgInvalidPayload
+  case missingLogin
+  case readerProofInvalidPayload
+  case certificateInvalidPayload
   case failedToEncrypt
   case failedToDecrypt
   case scramFetchError
@@ -23,6 +26,7 @@ public enum SecureT2UError : Swift.Error {
   case unexpectedCommand
   case missingDelegate
   case offsetReadOutOfBounds
+  case unrecognizedEvent
   public static func == (a: SecureUnlock.SecureT2UError, b: SecureUnlock.SecureT2UError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -44,6 +48,13 @@ extension Foundation.NSNotification.Name {
 public struct SecureUnlockLogger {
   public static var info: ((_ message: Swift.String, _ file: Swift.String, _ function: Swift.String) -> Swift.Void)?
   public static var error: ((_ message: Swift.String, _ file: Swift.String, _ function: Swift.String) -> Swift.Void)?
+}
+public struct Login {
+  public var id: Swift.Int
+  public var token: Swift.String
+  public var key: Swift.String
+  public var certificate: Swift.String
+  public init(id: Swift.Int, token: Swift.String, key: Swift.String, certificate: Swift.String)
 }
 public struct BeaconLock : Swift.Identifiable, Swift.Equatable, Swift.Codable {
   public var id: Swift.Int
@@ -104,9 +115,8 @@ extension SecureUnlock.SecureUnlockManager : CoreBluetooth.CBPeripheralManagerDe
 public protocol SecureUnlockDelegate : AnyObject {
   func secureUnlockSuccess(online: Swift.Bool, duration: Foundation.TimeInterval)
   func secureUnlockFailure(error: SecureUnlock.SecureT2UError, duration: Foundation.TimeInterval)
-  func secureUnlockLoginIDForOrganization(_ organization: Swift.Int?) -> Swift.Int?
-  func secureUnlockPhoneKeyForLogin(_ login: Swift.Int) -> Swift.String?
-  func secureUnlockFetchCertificate(login: Swift.Int, reader: Swift.Int, online: Swift.Bool, completion: @escaping (Swift.Result<Swift.String, SecureUnlock.SecureT2UError>) -> Swift.Void)
+  func secureUnlockClientID() -> Swift.Int
+  func secureUnlockLoginForOrganization(_ organization: Swift.Int?) -> SecureUnlock.Login?
 }
 extension SecureUnlock.SecureT2UError : Swift.Equatable {}
 extension SecureUnlock.SecureT2UError : Swift.Hashable {}

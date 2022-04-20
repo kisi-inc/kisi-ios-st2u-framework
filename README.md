@@ -82,6 +82,10 @@ extension MyClass: SecureUnlockDelegate {
         // Duration parameter tells how long the unlock took
     }
     
+    func secureUnlockClientID() -> Int {
+        // Request your client id on sdks@kisi.io and return it here
+    }
+    
     func secureUnlockLoginIDForOrganization(_ organization: Int?) -> Int? {
         // Login id callback. 
         // If you only support 1 login you can ignore the organization property and simply return the login id for the logged in user. Otherwise you must find the login id for the given organization.
