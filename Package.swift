@@ -2,19 +2,19 @@
 import PackageDescription
 
 let package = Package(
-    name: "SecureUnlock",
+    name: "SecureAccess",
     platforms: [
         .iOS(.v13)
     ],
     products: [
         .library(
-            name: "SecureUnlock",
-            targets: ["SecureUnlock"])
+            name: "SecureAccess",
+            targets: ["SecureAccess"])
     ],
     targets: [
         .binaryTarget(
-            name: "SecureUnlock",
-            path: "SecureUnlock.xcframework"
+            name: "SecureAccess",
+            path: "SecureAccess.xcframework"
         )
     ]
 )

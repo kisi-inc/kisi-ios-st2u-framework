@@ -1,47 +1,46 @@
-# Kisi Secure Unlock
+# Kisi Secure Access
 
-## Integration
-
-Kisi Secure Unlock is distributed as a swift package.
-To integrate it into your app simply add the [repository](https://github.com/kisi-inc/kisi-ios-st2u-framework) as a package dependency in [Xcode](https://developer.apple.com/documentation/swift_packages/adding_package_dependencies_to_your_app).
+The Kisi Secure Access SDK allows your app to interact with Kisi Readers.
+Either via [tap to unlock](https://docs.kisi.io/concepts/tap_to_unlock_tap_to_access) or by retrieving the proof for doors with [reader restriction](https://docs.kisi.io/concepts/restrictions) enabled.
 
 ## Permissions
 
-### Required
-Secure unlock needs bluetooth permission and be able to act as a bluetooth peripheral while in background.
-So you need to add these to your Info.plist
+Depending on what feature set you want to support you need to request the appropriate permissions from the user
+
+|               | Bluetooth | Location |
+|---------------|-----------|----------|
+| Tap To Access | yes       | yes*     |
+| Reader Restriction  | no        | yes      |
+
+_*not strictly necessary but will improve the performance of tap to unlock (i.e allowing for faster unlocks)._
+
+### Bluetooth
+
+Add the following to your Info.plist
 
 ```xml
 <key>NSBluetoothAlwaysUsageDescription</key>
 <string>Some string explaining to your users why you need bluetooth permission.</string>
-```
-
-```xml
 <key>UIBackgroundModes</key>
 <array>
     <string>bluetooth-peripheral</string>
 </array>
 ```
 
-You prompt the bluetooth permission dialog by simply initialising an CBCentralManager instance:
+You prompt the bluetooth permission dialog by simply initializing an CBCentralManager instance:
 ```swift
 CBCentralManager(delegate: self, queue: .main, options: nil)
 ```
 
-### Optional
-You can also optionally get permission to use location in background. This will improve the performance of tap to unlock under certain conditions.
+### Location
+
+We don't use the device's GPS coordinates. But we are using iBeacon which Apple has put under the Core Location framework despite being BLE.
+
+Info.plist
 
 ```xml
 <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 <string>Unlocking by tapping your phone against a Kisi reader will work better with always permission. Kisi doesn&apos;t store or share your location data.</string>
-```
-
-```xml
-<key>UIBackgroundModes</key>
-<array>
-    <string>bluetooth-peripheral</string>
-    <string>location</string>
-</array>
 ```
 
 You can then prompt the user for location permission
@@ -51,78 +50,128 @@ locationManager.delegate = self
 locationManager.requestAlwaysAuthorization()
 ```
 
-## Usage
+## Tap to access
+
+Tap To Unlock allows you to open a door only by holding your device up to a Kisi Reader. [Read more on our documentation page](https://docs.kisi.io/concepts/tap_to_unlock_tap_to_access)
+
 Import the package
 
 ```swift
-import SecureUnlock
+import SecureAccess
 ```
 
 In ```didFinishLaunchingWithOptions``` start the secure unlock manager and set the delegate
 ```swift
-SecureUnlockManager.shared.start()
-SecureUnlockManager.shared.delegate = self
+TapToAccessManager.shared.start()
+TapToAccessManager.shared.delegate = self
 ```
 
-### SecureUnlockDelegate
+If you have opted for always location permission you can also monitor for Kisi readers to ensure that the app is running and ready to unlock when holding it up to a reader.
+When app launches (didFinishLaunchingWithOptions) start monitoring
+```swift
+ReaderManager.shared.startMonitoring()
+```
 
-You need to implemented the SecureUnlockDelegate protocol.
+### TapToAccessDelegate
+
+You need to implement the SecureUnlockDelegate protocol.
 
 ```swift
-extension MyClass: SecureUnlockDelegate {
-    func secureUnlockSuccess(online: Bool, duration: TimeInterval) {
+extension MyClass: TapToAccessDelegate {
+    func tapToAccessSuccess(online: Bool, duration: TimeInterval) {
         // Callback when unlock succeeds.
         // Online parameter indicates if it was an online or offline unlock.
         // Duration parameter tells how long the unlock took
     }
     
-    func secureUnlockFailure(error: SecureT2UError, duration: TimeInterval) {
+    func tapToAccessFailure(error: TapToAccessError, duration: TimeInterval) {
         // Unlock failed
-        // Note that if because of needsDeviceOwnerVerification you should prompt user to unlock phone or setup passcode.
+        // Note that if needsDeviceOwnerVerification you should prompt the user to unlock the phone or set up a passcode.
         // Duration parameter tells how long the unlock took
     }
     
-    func secureUnlockClientID() -> Int {
+    func tapToAccessClientID() -> Int {
         // Request your client id on sdks@kisi.io and return it here
     }
     
-    func secureUnlockLoginIDForOrganization(_ organization: Int?) -> Int? {
-        // Login id callback. 
-        // If you only support 1 login you can ignore the organization property and simply return the login id for the logged in user. Otherwise you must find the login id for the given organization.
-    }
-    
-    func secureUnlockPhoneKeyForLogin(_ login: Int) -> String? {
-        // Phone key callback. 
-        // The phone key is returned when you create a login object. See https://api.kisi.io/docs#/operations/createLogin.
-    }
-    
-    func secureUnlockFetchCertificate(login: Int, reader: Int, online: Bool, completion: @escaping (Result<String, SecureT2UError>) -> Void) {
-        // If online use certificate that was returned when login was created. See scram credentials property https://api.kisi.io/docs#/operations/createLogin.
-        // If offline you need to fetch a short lived offline certificate for the given reader (beacon) id. See offline certificate https://api.kisi.io/docs#/operations/fetchOfflineCertificate.
+    func tapToAccessLoginForOrganization(_ organization: Int?) -> Login? {
+        // Return a Login object for the given organization.
+        // See https://api.kisi.io/docs#/operations/createLogin on how to create logins
     }
 }
 ```
 
-### Optional
-If you have opted for location permission you can also start the BeaconManager in ```didFinishLaunchingWithOptions```
+## Reader Restriction
 
+The Kisi Reader restriction feature ensures that users may only unlock when standing in front of a door.
+This SDK will allow you to fetch the necessary reader proof used to verify that you are standing at the door.
+[Read more on our documentation page](https://docs.kisi.io/concepts/restrictions)
+
+When app launches (didFinishLaunchingWithOptions) start monitoring
 ```swift
-BeaconManager.shared.startMonitoring()
+ReaderManager.shared.startMonitoring()
 ```
 
-If you also want access to the TOTP needed for doing in-app unlocks for doors that have this feature enabled you should also start ranging in ```applicationWillEnterForeground```.
+To get access to the reader proximity proof needed for doing in-app unlocks for doors that have this feature enabled you should also start ranging in ```applicationWillEnterForeground```.
 
 ```swift
-BeaconManager.shared.startRanging()
+ReaderManager.shared.startRanging()
 ```
 
 And to avoid excessive battery consumption stop ranging in ```applicationDidEnterBackground```.
 ```swift
-BeaconManager.shared.stopRanging()
+ReaderManager.shared.stopRanging()
 ```
 
-The beacon manager will post notifications when entering/leaving a nearby reader that you can listen for.
+Get the reader proof for a given lock
 ```swift
-NotificationCenter.default.addObserver(self, selector: #selector(didEnterNotification), name: .BeaconManagerDidEnterRegionNotification, object: nil)
-NotificationCenter.default.addObserver(self, selector: #selector(didExitNotification), name: .BeaconManagerDidExitRegionNotification, object: nil)
+let readerProof = BeaconManager.shared.proximityProofForLock(lock.id)
 ```
+
+The ReaderManager will post notifications when entering/leaving a nearby reader that you can listen for.
+```swift
+NotificationCenter.default.addObserver(self, selector: #selector(didEnterNotification), name: .ReaderManagerDidEnterNotification, object: nil)
+NotificationCenter.default.addObserver(self, selector: #selector(didExitNotification), name: .ReaderManagerDidExitNotification, object: nil)
+```
+
+## Logging
+
+You can enable logging from the SDK. Note that this will return access tokens/key/certificates in clear text.
+So while useful during development/debugging it should be used with care in a production app.
+
+```swift
+SecureAccessLogger.info = { message, file, function in
+    // Pass the info on to whichever logging backend you prefer. NSLog, print, etc
+}
+
+SecureAccessLogger.error = { message, file, function in
+    // Pass the info on to whichever logging backend you prefer. NSLog, print, etc
+}
+```
+
+## Apple Pay
+
+If Apple Pay is enabled on the device, it will be triggered when you hold it up against the Kisi Reader.
+Currently you can suppress that only when the app is in foreground but not in background.
+
+### Requesting Entitlement
+
+It can be a bit tricky to find in the documentation how to request those entitlements. So I'm adding it here, but note that Apples process for requesting them might have changed since this was written.
+
+```
+To request the special entitlement email apple-pay-provisioning@apple.com . Be sure to include information about your company and describe the use case requiring suppression of the Apple Pay dialog
+```
+
+### Suppressing Dialog
+
+When app enters foreground call [requestAutomaticPassPresentationSuppression](https://developer.apple.com/documentation/passkit/pkpasslibrary/1617078-requestautomaticpasspresentation)
+
+
+## Kisi App
+
+If you have implemented Tap To Unlock in your own app. Make sure to uninstall the Kisi App.
+Otherwise it's undefined which of the apps that will get asked to handle the BLE requests.
+
+## Example
+
+In this repository you can find an example app showing how to sign in and unlock both with tap to unlock and in-app with reader proof.

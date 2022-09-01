@@ -1,0 +1,11 @@
+framework module SecureAccess {
+  umbrella header "SecureAccess.h"
+
+  export *
+  module * { export * }
+}
+
+module SecureAccess.Swift {
+    header "SecureAccess-Swift.h"
+    requires objc
+}
