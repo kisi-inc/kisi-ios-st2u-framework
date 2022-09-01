@@ -23,7 +23,7 @@
 		D790136927EC9C1900B67054 /* LocksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D790136827EC9C1900B67054 /* LocksViewModel.swift */; };
 		D790136B27EC9C2600B67054 /* LockRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D790136A27EC9C2600B67054 /* LockRemote.swift */; };
 		D790136D27EC9C2E00B67054 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D790136C27EC9C2E00B67054 /* Lock.swift */; };
-		D790137127ECAA3E00B67054 /* SecureUnlock in Frameworks */ = {isa = PBXBuildFile; productRef = D790137027ECAA3E00B67054 /* SecureUnlock */; };
+		D79CF38228C0AA3200429375 /* SecureAccess in Frameworks */ = {isa = PBXBuildFile; productRef = D79CF38128C0AA3200429375 /* SecureAccess */; };
 		D7DB260227F6F4D1002D2541 /* AuthenticationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DB260127F6F4D1002D2541 /* AuthenticationSelectionView.swift */; };
 		D7DB260427F6FF8A002D2541 /* SSOView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DB260327F6FF8A002D2541 /* SSOView.swift */; };
 /* End PBXBuildFile section */
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D790137127ECAA3E00B67054 /* SecureUnlock in Frameworks */,
+				D79CF38228C0AA3200429375 /* SecureAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +68,7 @@
 			children = (
 				D790134027EC661500B67054 /* Example */,
 				D790133F27EC661500B67054 /* Products */,
+				D79CF38028C0AA3200429375 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +138,13 @@
 			path = Locks;
 			sourceTree = "<group>";
 		};
+		D79CF38028C0AA3200429375 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,7 +162,7 @@
 			);
 			name = Example;
 			packageProductDependencies = (
-				D790137027ECAA3E00B67054 /* SecureUnlock */,
+				D79CF38128C0AA3200429375 /* SecureAccess */,
 			);
 			productName = Example;
 			productReference = D790133E27EC661500B67054 /* Example.app */;
@@ -444,10 +452,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D790137027ECAA3E00B67054 /* SecureUnlock */ = {
+		D79CF38128C0AA3200429375 /* SecureAccess */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D790136F27ECAA3E00B67054 /* XCRemoteSwiftPackageReference "kisi-ios-st2u-framework" */;
-			productName = SecureUnlock;
+			productName = SecureAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

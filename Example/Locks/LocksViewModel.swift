@@ -7,11 +7,11 @@
 
 import Foundation
 import SwiftUI
-import SecureUnlock
+import SecureAccess
 
 class LocksViewModel: ObservableObject {
     private var lockRemote = LockRemote()
-    private var beaconManager = BeaconManager.shared
+    private var readerManager = ReaderManager.shared
     
     @Published var locks: [Lock] = []
     private let place: Place
@@ -35,7 +35,7 @@ class LocksViewModel: ObservableObject {
     func unlock(_ lock: Lock) {
         // A reader can be configured to require a proof that the phone is nearby the reader
         // You can get this from the beacon manager
-        let proof = beaconManager.timeBasedOneTimePasswordForLock(lock.id)
+        let proof = readerManager.proximityProofForLock(lock.id)
         lockRemote.unlock(lock, proof: proof)
     }
 }
