@@ -4411,15 +4411,22 @@
     },
     {
       "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Identifier.swift",
-      "kind": "StringLiteral",
-      "offset": 206,
-      "length": 38,
-      "value": "\"00000001-ff26-d57c-4296-dcccc52f33d3\""
+      "kind": "IntegerLiteral",
+      "offset": 214,
+      "length": 1,
+      "value": "9"
     },
     {
       "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Identifier.swift",
       "kind": "StringLiteral",
-      "offset": 277,
+      "offset": 338,
+      "length": 38,
+      "value": "\"6874ba46-5db9-48f5-8013-fc93882f3fb8\""
+    },
+    {
+      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Identifier.swift",
+      "kind": "StringLiteral",
+      "offset": 451,
       "length": 38,
       "value": "\"00000002-af61-4a99-828f-3d0cf5ecd183\""
     },
