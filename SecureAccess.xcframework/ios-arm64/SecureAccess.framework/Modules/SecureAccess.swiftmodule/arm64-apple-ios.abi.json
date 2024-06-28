@@ -74,13 +74,33 @@
               {
                 "kind": "TypeFunc",
                 "name": "Function",
-                "printedName": "(SecureAccess.TapToAccessError.Type) -> SecureAccess.TapToAccessError",
+                "printedName": "(SecureAccess.TapToAccessError.Type) -> (Swift.String) -> SecureAccess.TapToAccessError",
                 "children": [
                   {
-                    "kind": "TypeNominal",
-                    "name": "TapToAccessError",
-                    "printedName": "SecureAccess.TapToAccessError",
-                    "usr": "s:12SecureAccess05TapToB5ErrorO"
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String) -> SecureAccess.TapToAccessError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TapToAccessError",
+                        "printedName": "SecureAccess.TapToAccessError",
+                        "usr": "s:12SecureAccess05TapToB5ErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(type: Swift.String)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "kind": "TypeNominal",
@@ -99,8 +119,8 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:12SecureAccess05TapToB5ErrorO17invalidTransitionyA2CmF",
-            "mangledName": "$s12SecureAccess05TapToB5ErrorO17invalidTransitionyA2CmF",
+            "usr": "s:12SecureAccess05TapToB5ErrorO17invalidTransitionyACSS_tcACmF",
+            "mangledName": "$s12SecureAccess05TapToB5ErrorO17invalidTransitionyACSS_tcACmF",
             "moduleName": "SecureAccess"
           },
           {
@@ -148,13 +168,41 @@
               {
                 "kind": "TypeFunc",
                 "name": "Function",
-                "printedName": "(SecureAccess.TapToAccessError.Type) -> SecureAccess.TapToAccessError",
+                "printedName": "(SecureAccess.TapToAccessError.Type) -> (Swift.Int?) -> SecureAccess.TapToAccessError",
                 "children": [
                   {
-                    "kind": "TypeNominal",
-                    "name": "TapToAccessError",
-                    "printedName": "SecureAccess.TapToAccessError",
-                    "usr": "s:12SecureAccess05TapToB5ErrorO"
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Int?) -> SecureAccess.TapToAccessError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TapToAccessError",
+                        "printedName": "SecureAccess.TapToAccessError",
+                        "usr": "s:12SecureAccess05TapToB5ErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(organization: Swift.Int?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.Int?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Int",
+                                "printedName": "Swift.Int",
+                                "usr": "s:Si"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "kind": "TypeNominal",
@@ -173,8 +221,8 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:12SecureAccess05TapToB5ErrorO12missingLoginyA2CmF",
-            "mangledName": "$s12SecureAccess05TapToB5ErrorO12missingLoginyA2CmF",
+            "usr": "s:12SecureAccess05TapToB5ErrorO12missingLoginyACSiSg_tcACmF",
+            "mangledName": "$s12SecureAccess05TapToB5ErrorO12missingLoginyACSiSg_tcACmF",
             "moduleName": "SecureAccess"
           },
           {
@@ -688,70 +736,7 @@
             "moduleName": "SecureAccess",
             "static": true,
             "implicit": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Var",
-            "name": "hashValue",
-            "printedName": "hashValue",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:12SecureAccess05TapToB5ErrorO9hashValueSivp",
-            "mangledName": "$s12SecureAccess05TapToB5ErrorO9hashValueSivp",
-            "moduleName": "SecureAccess",
-            "implicit": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12SecureAccess05TapToB5ErrorO9hashValueSivg",
-                "mangledName": "$s12SecureAccess05TapToB5ErrorO9hashValueSivg",
-                "moduleName": "SecureAccess",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Function",
-            "name": "hash",
-            "printedName": "hash(into:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Hasher",
-                "printedName": "Swift.Hasher",
-                "paramValueOwnership": "InOut",
-                "usr": "s:s6HasherV"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:12SecureAccess05TapToB5ErrorO4hash4intoys6HasherVz_tF",
-            "mangledName": "$s12SecureAccess05TapToB5ErrorO4hash4intoys6HasherVz_tF",
-            "moduleName": "SecureAccess",
-            "implicit": true,
+            "isFromExtension": true,
             "funcSelfKind": "NonMutating"
           }
         ],
@@ -765,20 +750,6 @@
         "conformances": [
           {
             "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
             "name": "Error",
             "printedName": "Error",
             "usr": "s:s5ErrorP",
@@ -790,6 +761,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
           }
         ]
       },
@@ -1942,7 +1920,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Decoder",
-                "printedName": "Swift.Decoder",
+                "printedName": "any Swift.Decoder",
                 "usr": "s:s7DecoderP"
               }
             ],
@@ -1999,7 +1977,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Encoder",
-                "printedName": "Swift.Encoder",
+                "printedName": "any Swift.Encoder",
                 "usr": "s:s7EncoderP"
               }
             ],
@@ -2566,7 +2544,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Error",
-                "printedName": "Swift.Error",
+                "printedName": "any Swift.Error",
                 "usr": "s:s5ErrorP"
               }
             ],
@@ -2652,7 +2630,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Error",
-                "printedName": "Swift.Error",
+                "printedName": "any Swift.Error",
                 "usr": "s:s5ErrorP"
               }
             ],
@@ -2816,7 +2794,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Error",
-                "printedName": "Swift.Error",
+                "printedName": "any Swift.Error",
                 "usr": "s:s5ErrorP"
               }
             ],
@@ -2995,7 +2973,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "WeakStorage",
-                "printedName": "SecureAccess.TapToAccessDelegate?"
+                "printedName": "(any SecureAccess.TapToAccessDelegate)?"
               }
             ],
             "declKind": "Var",
@@ -3017,12 +2995,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "SecureAccess.TapToAccessDelegate?",
+                    "printedName": "(any SecureAccess.TapToAccessDelegate)?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "TapToAccessDelegate",
-                        "printedName": "SecureAccess.TapToAccessDelegate",
+                        "printedName": "any SecureAccess.TapToAccessDelegate",
                         "usr": "s:12SecureAccess05TapToB8DelegateP"
                       }
                     ],
@@ -3051,12 +3029,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "SecureAccess.TapToAccessDelegate?",
+                    "printedName": "(any SecureAccess.TapToAccessDelegate)?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "TapToAccessDelegate",
-                        "printedName": "SecureAccess.TapToAccessDelegate",
+                        "printedName": "any SecureAccess.TapToAccessDelegate",
                         "usr": "s:12SecureAccess05TapToB8DelegateP"
                       }
                     ],
@@ -3088,8 +3066,10 @@
                 "mangledName": "$s12SecureAccess05TapToB7ManagerC8delegateAA0cdB8Delegate_pSgvM",
                 "moduleName": "SecureAccess",
                 "implicit": true,
+                "intro_iOS": "13.0",
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "Available"
                 ],
                 "accessorKind": "_modify"
               }
@@ -3302,12 +3282,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "Swift.Error?",
+                "printedName": "(any Swift.Error)?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "Error",
-                    "printedName": "Swift.Error",
+                    "printedName": "any Swift.Error",
                     "usr": "s:s5ErrorP"
                   }
                 ],
@@ -3346,12 +3326,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "Swift.Error?",
+                "printedName": "(any Swift.Error)?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "Error",
-                    "printedName": "Swift.Error",
+                    "printedName": "any Swift.Error",
                     "usr": "s:s5ErrorP"
                   }
                 ],
@@ -4258,65 +4238,86 @@
     {
       "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
       "kind": "IntegerLiteral",
-      "offset": 736,
+      "offset": 826,
       "length": 4,
       "value": "0x01"
     },
     {
       "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
       "kind": "IntegerLiteral",
-      "offset": 762,
+      "offset": 863,
       "length": 4,
       "value": "0x02"
     },
     {
       "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
       "kind": "IntegerLiteral",
-      "offset": 791,
+      "offset": 900,
       "length": 4,
       "value": "0x04"
     },
     {
       "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
       "kind": "IntegerLiteral",
-      "offset": 736,
+      "offset": 937,
+      "length": 4,
+      "value": "0x05"
+    },
+    {
+      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
+      "kind": "IntegerLiteral",
+      "offset": 826,
       "length": 4,
       "value": "0x01"
     },
     {
       "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
       "kind": "IntegerLiteral",
-      "offset": 762,
+      "offset": 863,
       "length": 4,
       "value": "0x02"
     },
     {
       "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
       "kind": "IntegerLiteral",
-      "offset": 791,
+      "offset": 900,
       "length": 4,
       "value": "0x04"
     },
     {
       "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
       "kind": "IntegerLiteral",
-      "offset": 736,
+      "offset": 937,
+      "length": 4,
+      "value": "0x05"
+    },
+    {
+      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
+      "kind": "IntegerLiteral",
+      "offset": 826,
       "length": 4,
       "value": "0x01"
     },
     {
       "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
       "kind": "IntegerLiteral",
-      "offset": 762,
+      "offset": 863,
       "length": 4,
       "value": "0x02"
     },
     {
       "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
       "kind": "IntegerLiteral",
-      "offset": 791,
+      "offset": 900,
       "length": 4,
       "value": "0x04"
+    },
+    {
+      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
+      "kind": "IntegerLiteral",
+      "offset": 937,
+      "length": 4,
+      "value": "0x05"
     },
     {
       "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Util\/BeaconLock.swift",
