@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
-// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SecureAccess
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name SecureAccess
 import CommonCrypto
 import CoreBluetooth
 import CoreLocation
@@ -12,10 +11,11 @@ import Security
 import Swift
 import _Concurrency
 import _StringProcessing
+import _SwiftConcurrencyShims
 public enum TapToAccessError : Swift.Error {
-  case invalidTransition
+  case invalidTransition(type: Swift.String)
   case orgInvalidPayload
-  case missingLogin
+  case missingLogin(organization: Swift.Int?)
   case readerProofInvalidPayload
   case certificateInvalidPayload
   case failedToEncrypt
@@ -29,11 +29,9 @@ public enum TapToAccessError : Swift.Error {
   case missingDelegate
   case offsetReadOutOfBounds
   case unrecognizedEvent
+}
+extension SecureAccess.TapToAccessError : Swift.Equatable {
   public static func == (a: SecureAccess.TapToAccessError, b: SecureAccess.TapToAccessError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
 }
 extension Foundation.NSNotification.Name {
   public static var ReaderManagerDidEnterNotification: Foundation.Notification.Name {
@@ -68,8 +66,8 @@ public struct BeaconLock : Swift.Identifiable, Swift.Equatable, Swift.Codable {
   public var oneTimePassword: Swift.Int
   public static func == (a: SecureAccess.BeaconLock, b: SecureAccess.BeaconLock) -> Swift.Bool
   public typealias ID = Swift.Int
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 @objc @_hasMissingDesignatedInitializers @available(iOS 13.0, *)
 final public class ReaderManager : ObjectiveC.NSObject {
@@ -91,18 +89,18 @@ extension SecureAccess.ReaderManager {
 @available(iOS 13.0, *)
 extension SecureAccess.ReaderManager : CoreLocation.CLLocationManagerDelegate {
   @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
-  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: Swift.Error)
+  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: any Swift.Error)
   @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didStartMonitoringFor region: CoreLocation.CLRegion)
-  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, monitoringDidFailFor region: CoreLocation.CLRegion?, withError error: Swift.Error)
+  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, monitoringDidFailFor region: CoreLocation.CLRegion?, withError error: any Swift.Error)
   @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didEnterRegion region: CoreLocation.CLRegion)
   @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didExitRegion region: CoreLocation.CLRegion)
   @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didRangeBeacons beacons: [CoreLocation.CLBeacon], in region: CoreLocation.CLBeaconRegion)
-  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, rangingBeaconsDidFailFor region: CoreLocation.CLBeaconRegion, withError error: Swift.Error)
+  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, rangingBeaconsDidFailFor region: CoreLocation.CLBeaconRegion, withError error: any Swift.Error)
 }
 @objc @_hasMissingDesignatedInitializers @available(iOS 13.0, *)
 final public class TapToAccessManager : ObjectiveC.NSObject {
   @objc public static let shared: SecureAccess.TapToAccessManager
-  weak final public var delegate: SecureAccess.TapToAccessDelegate? {
+  weak final public var delegate: (any SecureAccess.TapToAccessDelegate)? {
     get
     set
   }
@@ -115,8 +113,8 @@ extension SecureAccess.TapToAccessManager : CoreBluetooth.CBPeripheralManagerDel
   @objc final public func peripheralManagerDidUpdateState(_ peripheral: CoreBluetooth.CBPeripheralManager)
   @objc final public func peripheralManager(_ peripheral: CoreBluetooth.CBPeripheralManager, didReceiveRead request: CoreBluetooth.CBATTRequest)
   @objc final public func peripheralManager(_ peripheral: CoreBluetooth.CBPeripheralManager, didReceiveWrite requests: [CoreBluetooth.CBATTRequest])
-  @objc final public func peripheralManager(_ peripheral: CoreBluetooth.CBPeripheralManager, didAdd service: CoreBluetooth.CBService, error: Swift.Error?)
-  @objc final public func peripheralManagerDidStartAdvertising(_ peripheral: CoreBluetooth.CBPeripheralManager, error: Swift.Error?)
+  @objc final public func peripheralManager(_ peripheral: CoreBluetooth.CBPeripheralManager, didAdd service: CoreBluetooth.CBService, error: (any Swift.Error)?)
+  @objc final public func peripheralManagerDidStartAdvertising(_ peripheral: CoreBluetooth.CBPeripheralManager, error: (any Swift.Error)?)
   @objc final public func peripheralManager(_ peripheral: CoreBluetooth.CBPeripheralManager, willRestoreState dict: [Swift.String : Any])
 }
 public protocol TapToAccessDelegate : AnyObject {
@@ -125,5 +123,3 @@ public protocol TapToAccessDelegate : AnyObject {
   func tapToAccessClientID() -> Swift.Int
   func tapToAccessLoginForOrganization(_ organization: Swift.Int?) -> SecureAccess.Login?
 }
-extension SecureAccess.TapToAccessError : Swift.Equatable {}
-extension SecureAccess.TapToAccessError : Swift.Hashable {}
