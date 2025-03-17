@@ -51,7 +51,7 @@ struct ExampleApp: App {
     }
 }
 
-class TapToAccessDataProvider: TapToAccessDelegate {
+final class TapToAccessDataProvider: TapToAccessDelegate {
     func tapToAccessSuccess(online: Bool, duration: TimeInterval) {
         
     }
@@ -66,11 +66,11 @@ class TapToAccessDataProvider: TapToAccessDelegate {
         }
     }
     
-    func tapToAccessClientID() -> Int {
+    func tapToAccessClientID() async -> Int {
         return 0 // Request proper id by emailing sdks@kisi.io. This is so we can better help you debug any issues you might run into.
     }
     
-    func tapToAccessLoginForOrganization(_ organization: Int?) -> SecureAccess.Login? {
+    func tapToAccessLoginForOrganization(_ organization: Int?) async -> SecureAccess.Login? {
         // If you app supports being signed in to multiple organization use the id to lookup the corresponding login.
         // otherwise just return the login you have.
         guard let login = AuthStorage.shared.currentLogin() else { return nil }

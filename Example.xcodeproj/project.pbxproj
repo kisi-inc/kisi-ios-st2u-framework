@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D279D1412D882229008CB58E /* SecureAccess in Frameworks */ = {isa = PBXBuildFile; productRef = D279D1402D882229008CB58E /* SecureAccess */; };
 		D790134227EC661500B67054 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D790134127EC661500B67054 /* ExampleApp.swift */; };
 		D790134627EC661800B67054 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D790134527EC661800B67054 /* Assets.xcassets */; };
 		D790134927EC661800B67054 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D790134827EC661800B67054 /* Preview Assets.xcassets */; };
@@ -23,7 +24,6 @@
 		D790136927EC9C1900B67054 /* LocksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D790136827EC9C1900B67054 /* LocksViewModel.swift */; };
 		D790136B27EC9C2600B67054 /* LockRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D790136A27EC9C2600B67054 /* LockRemote.swift */; };
 		D790136D27EC9C2E00B67054 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D790136C27EC9C2E00B67054 /* Lock.swift */; };
-		D79CF38228C0AA3200429375 /* SecureAccess in Frameworks */ = {isa = PBXBuildFile; productRef = D79CF38128C0AA3200429375 /* SecureAccess */; };
 		D7DB260227F6F4D1002D2541 /* AuthenticationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DB260127F6F4D1002D2541 /* AuthenticationSelectionView.swift */; };
 		D7DB260427F6FF8A002D2541 /* SSOView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DB260327F6FF8A002D2541 /* SSOView.swift */; };
 /* End PBXBuildFile section */
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D79CF38228C0AA3200429375 /* SecureAccess in Frameworks */,
+				D279D1412D882229008CB58E /* SecureAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +162,7 @@
 			);
 			name = Example;
 			packageProductDependencies = (
-				D79CF38128C0AA3200429375 /* SecureAccess */,
+				D279D1402D882229008CB58E /* SecureAccess */,
 			);
 			productName = Example;
 			productReference = D790133E27EC661500B67054 /* Example.app */;
@@ -176,7 +176,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					D790133D27EC661500B67054 = {
 						CreatedOnToolsVersion = 13.3;
@@ -193,7 +193,7 @@
 			);
 			mainGroup = D790133527EC661500B67054;
 			packageReferences = (
-				D790136F27ECAA3E00B67054 /* XCRemoteSwiftPackageReference "kisi-ios-st2u-framework" */,
+				D279D13F2D882229008CB58E /* XCLocalSwiftPackageReference "./" */,
 			);
 			productRefGroup = D790133F27EC661500B67054 /* Products */;
 			projectDirPath = "";
@@ -279,6 +279,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -300,6 +301,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -339,6 +341,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -353,6 +356,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -440,21 +444,16 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		D790136F27ECAA3E00B67054 /* XCRemoteSwiftPackageReference "kisi-ios-st2u-framework" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:kisi-inc/kisi-ios-st2u-framework.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		D279D13F2D882229008CB58E /* XCLocalSwiftPackageReference "./" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ./;
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D79CF38128C0AA3200429375 /* SecureAccess */ = {
+		D279D1402D882229008CB58E /* SecureAccess */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D790136F27ECAA3E00B67054 /* XCRemoteSwiftPackageReference "kisi-ios-st2u-framework" */;
 			productName = SecureAccess;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -141,11 +141,11 @@ extension MyClass: TapToAccessDelegate {
         // Duration parameter tells how long the unlock took
     }
 
-    func tapToAccessClientID() -> Int {
+    func tapToAccessClientID() async -> Int {
         // Request your client id on sdks@kisi.io and return it here
     }
 
-    func tapToAccessLoginForOrganization(_ organization: Int?) -> Login? {
+    func tapToAccessLoginForOrganization(_ organization: Int?) async -> Login? {
         // Return a Login object for the given organization.
         // See https://api.kisi.io/docs#/operations/createLogin on how to create logins
     }
