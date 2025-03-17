@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "SecureAccess",
+    "printedName": "SecureAccess",
     "children": [
       {
         "kind": "Import",
@@ -750,6 +750,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Error",
             "printedName": "Error",
             "usr": "s:s5ErrorP",
@@ -825,65 +839,28 @@
         "children": [
           {
             "kind": "Var",
-            "name": "info",
-            "printedName": "info",
+            "name": "shared",
+            "printedName": "shared",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Swift.String, Swift.String, Swift.String) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Swift.String, Swift.String, Swift.String) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Swift.String, Swift.String, Swift.String)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "usr": "s:Sq"
+                "name": "SecureAccessLogger",
+                "printedName": "SecureAccess.SecureAccessLogger",
+                "usr": "s:12SecureAccess0aB6LoggerC"
               }
             ],
             "declKind": "Var",
-            "usr": "s:12SecureAccess0aB6LoggerV4infoySS_S2StcSgvpZ",
-            "mangledName": "$s12SecureAccess0aB6LoggerV4infoySS_S2StcSgvpZ",
+            "usr": "s:12SecureAccess0aB6LoggerC6sharedACvpZ",
+            "mangledName": "$s12SecureAccess0aB6LoggerC6sharedACvpZ",
             "moduleName": "SecureAccess",
             "static": true,
             "declAttributes": [
+              "Final",
               "HasInitialValue",
               "HasStorage",
               "AccessControl"
             ],
+            "isLet": true,
             "hasStorage": true,
             "accessors": [
               {
@@ -893,269 +870,38 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "((Swift.String, Swift.String, Swift.String) -> ())?",
-                    "children": [
-                      {
-                        "kind": "TypeFunc",
-                        "name": "Function",
-                        "printedName": "(Swift.String, Swift.String, Swift.String) -> ()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Tuple",
-                            "printedName": "(Swift.String, Swift.String, Swift.String)",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "String",
-                                "printedName": "Swift.String",
-                                "usr": "s:SS"
-                              },
-                              {
-                                "kind": "TypeNominal",
-                                "name": "String",
-                                "printedName": "Swift.String",
-                                "usr": "s:SS"
-                              },
-                              {
-                                "kind": "TypeNominal",
-                                "name": "String",
-                                "printedName": "Swift.String",
-                                "usr": "s:SS"
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ],
-                    "usr": "s:Sq"
+                    "name": "SecureAccessLogger",
+                    "printedName": "SecureAccess.SecureAccessLogger",
+                    "usr": "s:12SecureAccess0aB6LoggerC"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:12SecureAccess0aB6LoggerV4infoySS_S2StcSgvgZ",
-                "mangledName": "$s12SecureAccess0aB6LoggerV4infoySS_S2StcSgvgZ",
+                "usr": "s:12SecureAccess0aB6LoggerC6sharedACvgZ",
+                "mangledName": "$s12SecureAccess0aB6LoggerC6sharedACvgZ",
                 "moduleName": "SecureAccess",
                 "static": true,
                 "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
                 "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "((Swift.String, Swift.String, Swift.String) -> ())?",
-                    "children": [
-                      {
-                        "kind": "TypeFunc",
-                        "name": "Function",
-                        "printedName": "(Swift.String, Swift.String, Swift.String) -> ()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Tuple",
-                            "printedName": "(Swift.String, Swift.String, Swift.String)",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "String",
-                                "printedName": "Swift.String",
-                                "usr": "s:SS"
-                              },
-                              {
-                                "kind": "TypeNominal",
-                                "name": "String",
-                                "printedName": "Swift.String",
-                                "usr": "s:SS"
-                              },
-                              {
-                                "kind": "TypeNominal",
-                                "name": "String",
-                                "printedName": "Swift.String",
-                                "usr": "s:SS"
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12SecureAccess0aB6LoggerV4infoySS_S2StcSgvsZ",
-                "mangledName": "$s12SecureAccess0aB6LoggerV4infoySS_S2StcSgvsZ",
-                "moduleName": "SecureAccess",
-                "static": true,
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12SecureAccess0aB6LoggerV4infoySS_S2StcSgvMZ",
-                "mangledName": "$s12SecureAccess0aB6LoggerV4infoySS_S2StcSgvMZ",
-                "moduleName": "SecureAccess",
-                "static": true,
-                "implicit": true,
-                "accessorKind": "_modify"
               }
             ]
           },
           {
-            "kind": "Var",
-            "name": "error",
-            "printedName": "error",
+            "kind": "Function",
+            "name": "setInfoLogger",
+            "printedName": "setInfoLogger(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Swift.String, Swift.String, Swift.String) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Swift.String, Swift.String, Swift.String) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Swift.String, Swift.String, Swift.String)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:12SecureAccess0aB6LoggerV5errorySS_S2StcSgvpZ",
-            "mangledName": "$s12SecureAccess0aB6LoggerV5errorySS_S2StcSgvpZ",
-            "moduleName": "SecureAccess",
-            "static": true,
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "((Swift.String, Swift.String, Swift.String) -> ())?",
-                    "children": [
-                      {
-                        "kind": "TypeFunc",
-                        "name": "Function",
-                        "printedName": "(Swift.String, Swift.String, Swift.String) -> ()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Tuple",
-                            "printedName": "(Swift.String, Swift.String, Swift.String)",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "String",
-                                "printedName": "Swift.String",
-                                "usr": "s:SS"
-                              },
-                              {
-                                "kind": "TypeNominal",
-                                "name": "String",
-                                "printedName": "Swift.String",
-                                "usr": "s:SS"
-                              },
-                              {
-                                "kind": "TypeNominal",
-                                "name": "String",
-                                "printedName": "Swift.String",
-                                "usr": "s:SS"
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12SecureAccess0aB6LoggerV5errorySS_S2StcSgvgZ",
-                "mangledName": "$s12SecureAccess0aB6LoggerV5errorySS_S2StcSgvgZ",
-                "moduleName": "SecureAccess",
-                "static": true,
-                "implicit": true,
-                "accessorKind": "get"
+                "name": "Void",
+                "printedName": "()"
               },
               {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.String, Swift.String, Swift.String) -> ()",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -1164,86 +910,194 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "((Swift.String, Swift.String, Swift.String) -> ())?",
+                    "name": "Tuple",
+                    "printedName": "(Swift.String, Swift.String, Swift.String)",
                     "children": [
                       {
-                        "kind": "TypeFunc",
-                        "name": "Function",
-                        "printedName": "(Swift.String, Swift.String, Swift.String) -> ()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Tuple",
-                            "printedName": "(Swift.String, Swift.String, Swift.String)",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "String",
-                                "printedName": "Swift.String",
-                                "usr": "s:SS"
-                              },
-                              {
-                                "kind": "TypeNominal",
-                                "name": "String",
-                                "printedName": "Swift.String",
-                                "usr": "s:SS"
-                              },
-                              {
-                                "kind": "TypeNominal",
-                                "name": "String",
-                                "printedName": "Swift.String",
-                                "usr": "s:SS"
-                              }
-                            ]
-                          }
-                        ]
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
                       }
-                    ],
-                    "usr": "s:Sq"
+                    ]
                   }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12SecureAccess0aB6LoggerV5errorySS_S2StcSgvsZ",
-                "mangledName": "$s12SecureAccess0aB6LoggerV5errorySS_S2StcSgvsZ",
-                "moduleName": "SecureAccess",
-                "static": true,
-                "implicit": true,
-                "accessorKind": "set"
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:12SecureAccess0aB6LoggerC07setInfoC0yyySS_S2StYbcF",
+            "mangledName": "$s12SecureAccess0aB6LoggerC07setInfoC0yyySS_S2StYbcF",
+            "moduleName": "SecureAccess",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setErrorLogger",
+            "printedName": "setErrorLogger(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
               },
               {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.String, Swift.String, Swift.String) -> ()",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "Void",
                     "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Swift.String, Swift.String, Swift.String)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:12SecureAccess0aB6LoggerC08setErrorC0yyySS_S2StYbcF",
+            "mangledName": "$s12SecureAccess0aB6LoggerC08setErrorC0yyySS_S2StYbcF",
+            "moduleName": "SecureAccess",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "unownedExecutor",
+            "printedName": "unownedExecutor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UnownedSerialExecutor",
+                "printedName": "_Concurrency.UnownedSerialExecutor",
+                "usr": "s:Sce"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:12SecureAccess0aB6LoggerC15unownedExecutorScevp",
+            "mangledName": "$s12SecureAccess0aB6LoggerC15unownedExecutorScevp",
+            "moduleName": "SecureAccess",
+            "implicit": true,
+            "intro_Macosx": "10.15",
+            "intro_iOS": "13.0",
+            "intro_tvOS": "13.0",
+            "intro_watchOS": "6.0",
+            "declAttributes": [
+              "Available",
+              "Available",
+              "Available",
+              "Available",
+              "Final",
+              "Nonisolated",
+              "Semantics"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UnownedSerialExecutor",
+                    "printedName": "_Concurrency.UnownedSerialExecutor",
+                    "usr": "s:Sce"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:12SecureAccess0aB6LoggerV5errorySS_S2StcSgvMZ",
-                "mangledName": "$s12SecureAccess0aB6LoggerV5errorySS_S2StcSgvMZ",
+                "usr": "s:12SecureAccess0aB6LoggerC15unownedExecutorScevg",
+                "mangledName": "$s12SecureAccess0aB6LoggerC15unownedExecutorScevg",
                 "moduleName": "SecureAccess",
-                "static": true,
                 "implicit": true,
-                "accessorKind": "_modify"
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
               }
             ]
           }
         ],
-        "declKind": "Struct",
-        "usr": "s:12SecureAccess0aB6LoggerV",
-        "mangledName": "$s12SecureAccess0aB6LoggerV",
+        "declKind": "Class",
+        "usr": "s:12SecureAccess0aB6LoggerC",
+        "mangledName": "$s12SecureAccess0aB6LoggerC",
         "moduleName": "SecureAccess",
+        "intro_iOS": "13.0",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "Available"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Actor",
+            "printedName": "Actor",
+            "usr": "s:ScA",
+            "mangledName": "$sScA"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
         ]
       },
       {
@@ -1282,6 +1136,7 @@
               "AccessControl",
               "RawDocComment"
             ],
+            "isLet": true,
             "hasStorage": true,
             "accessors": [
               {
@@ -1302,48 +1157,6 @@
                 "moduleName": "SecureAccess",
                 "implicit": true,
                 "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12SecureAccess5LoginV2idSivs",
-                "mangledName": "$s12SecureAccess5LoginV2idSivs",
-                "moduleName": "SecureAccess",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12SecureAccess5LoginV2idSivM",
-                "mangledName": "$s12SecureAccess5LoginV2idSivM",
-                "moduleName": "SecureAccess",
-                "implicit": true,
-                "accessorKind": "_modify"
               }
             ]
           },
@@ -1368,6 +1181,7 @@
               "AccessControl",
               "RawDocComment"
             ],
+            "isLet": true,
             "hasStorage": true,
             "accessors": [
               {
@@ -1388,48 +1202,6 @@
                 "moduleName": "SecureAccess",
                 "implicit": true,
                 "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12SecureAccess5LoginV5tokenSSvs",
-                "mangledName": "$s12SecureAccess5LoginV5tokenSSvs",
-                "moduleName": "SecureAccess",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12SecureAccess5LoginV5tokenSSvM",
-                "mangledName": "$s12SecureAccess5LoginV5tokenSSvM",
-                "moduleName": "SecureAccess",
-                "implicit": true,
-                "accessorKind": "_modify"
               }
             ]
           },
@@ -1454,6 +1226,7 @@
               "AccessControl",
               "RawDocComment"
             ],
+            "isLet": true,
             "hasStorage": true,
             "accessors": [
               {
@@ -1474,48 +1247,6 @@
                 "moduleName": "SecureAccess",
                 "implicit": true,
                 "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12SecureAccess5LoginV3keySSvs",
-                "mangledName": "$s12SecureAccess5LoginV3keySSvs",
-                "moduleName": "SecureAccess",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12SecureAccess5LoginV3keySSvM",
-                "mangledName": "$s12SecureAccess5LoginV3keySSvM",
-                "moduleName": "SecureAccess",
-                "implicit": true,
-                "accessorKind": "_modify"
               }
             ]
           },
@@ -1704,6 +1435,27 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "CustomStringConvertible",
             "printedName": "CustomStringConvertible",
             "usr": "s:s23CustomStringConvertibleP",
@@ -1756,6 +1508,7 @@
               "HasStorage",
               "AccessControl"
             ],
+            "isLet": true,
             "hasStorage": true,
             "accessors": [
               {
@@ -1776,48 +1529,6 @@
                 "moduleName": "SecureAccess",
                 "implicit": true,
                 "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12SecureAccess10BeaconLockV2idSivs",
-                "mangledName": "$s12SecureAccess10BeaconLockV2idSivs",
-                "moduleName": "SecureAccess",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12SecureAccess10BeaconLockV2idSivM",
-                "mangledName": "$s12SecureAccess10BeaconLockV2idSivM",
-                "moduleName": "SecureAccess",
-                "implicit": true,
-                "accessorKind": "_modify"
               }
             ]
           },
@@ -1841,6 +1552,7 @@
               "HasStorage",
               "AccessControl"
             ],
+            "isLet": true,
             "hasStorage": true,
             "accessors": [
               {
@@ -1861,48 +1573,6 @@
                 "moduleName": "SecureAccess",
                 "implicit": true,
                 "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12SecureAccess10BeaconLockV15oneTimePasswordSivs",
-                "mangledName": "$s12SecureAccess10BeaconLockV15oneTimePasswordSivs",
-                "moduleName": "SecureAccess",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:12SecureAccess10BeaconLockV15oneTimePasswordSivM",
-                "mangledName": "$s12SecureAccess10BeaconLockV15oneTimePasswordSivM",
-                "moduleName": "SecureAccess",
-                "implicit": true,
-                "accessorKind": "_modify"
               }
             ]
           },
@@ -2000,6 +1670,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Identifiable",
             "printedName": "Identifiable",
             "children": [
@@ -2040,6 +1724,13 @@
             "printedName": "Encodable",
             "usr": "s:SE",
             "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
           }
         ]
       },
@@ -2154,6 +1845,7 @@
         "declKind": "Import",
         "moduleName": "SecureAccess",
         "declAttributes": [
+          "Preconcurrency",
           "RawDocComment"
         ]
       },
@@ -2831,6 +2523,27 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -2905,7 +2618,11 @@
         "name": "CoreBluetooth",
         "printedName": "CoreBluetooth",
         "declKind": "Import",
-        "moduleName": "SecureAccess"
+        "moduleName": "SecureAccess",
+        "declAttributes": [
+          "Preconcurrency",
+          "RawDocComment"
+        ]
       },
       {
         "kind": "TypeDecl",
@@ -2981,11 +2698,14 @@
             "mangledName": "$s12SecureAccess05TapToB7ManagerC8delegateAA0cdB8Delegate_pSgvp",
             "moduleName": "SecureAccess",
             "declAttributes": [
+              "HasInitialValue",
               "Final",
+              "HasStorage",
               "ReferenceOwnership",
               "AccessControl"
             ],
             "ownership": 1,
+            "hasStorage": true,
             "accessors": [
               {
                 "kind": "Accessor",
@@ -3011,6 +2731,7 @@
                 "usr": "s:12SecureAccess05TapToB7ManagerC8delegateAA0cdB8Delegate_pSgvg",
                 "mangledName": "$s12SecureAccess05TapToB7ManagerC8delegateAA0cdB8Delegate_pSgvg",
                 "moduleName": "SecureAccess",
+                "implicit": true,
                 "declAttributes": [
                   "Final"
                 ],
@@ -3045,6 +2766,7 @@
                 "usr": "s:12SecureAccess05TapToB7ManagerC8delegateAA0cdB8Delegate_pSgvs",
                 "mangledName": "$s12SecureAccess05TapToB7ManagerC8delegateAA0cdB8Delegate_pSgvs",
                 "moduleName": "SecureAccess",
+                "implicit": true,
                 "declAttributes": [
                   "Final"
                 ],
@@ -3100,6 +2822,29 @@
           },
           {
             "kind": "Function",
+            "name": "startIfNeeded",
+            "printedName": "startIfNeeded()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@SecureAccess@objc(cs)TapToAccessManager(im)startIfNeeded",
+            "mangledName": "$s12SecureAccess05TapToB7ManagerC13startIfNeededyyF",
+            "moduleName": "SecureAccess",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "stop",
             "printedName": "stop()",
             "children": [
@@ -3116,7 +2861,8 @@
             "declAttributes": [
               "Final",
               "AccessControl",
-              "ObjC"
+              "ObjC",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -3420,6 +3166,27 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -3579,8 +3346,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:12SecureAccess05TapToB8DelegateP03tapdB8ClientIDSiyF",
-            "mangledName": "$s12SecureAccess05TapToB8DelegateP03tapdB8ClientIDSiyF",
+            "usr": "s:12SecureAccess05TapToB8DelegateP03tapdB8ClientIDSiyYaF",
+            "mangledName": "$s12SecureAccess05TapToB8DelegateP03tapdB8ClientIDSiyYaF",
             "moduleName": "SecureAccess",
             "genericSig": "<τ_0_0 where τ_0_0 : SecureAccess.TapToAccessDelegate>",
             "sugared_genericSig": "<Self where Self : SecureAccess.TapToAccessDelegate>",
@@ -3626,8 +3393,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:12SecureAccess05TapToB8DelegateP03tapdB20LoginForOrganizationyAA0G0VSgSiSgF",
-            "mangledName": "$s12SecureAccess05TapToB8DelegateP03tapdB20LoginForOrganizationyAA0G0VSgSiSgF",
+            "usr": "s:12SecureAccess05TapToB8DelegateP03tapdB20LoginForOrganizationyAA0G0VSgSiSgYaF",
+            "mangledName": "$s12SecureAccess05TapToB8DelegateP03tapdB20LoginForOrganizationyAA0G0VSgSiSgYaF",
             "moduleName": "SecureAccess",
             "genericSig": "<τ_0_0 where τ_0_0 : SecureAccess.TapToAccessDelegate>",
             "sugared_genericSig": "<Self where Self : SecureAccess.TapToAccessDelegate>",
@@ -3643,11 +3410,36 @@
         "usr": "s:12SecureAccess05TapToB8DelegateP",
         "mangledName": "$s12SecureAccess05TapToB8DelegateP",
         "moduleName": "SecureAccess",
-        "genericSig": "<τ_0_0 : AnyObject>",
-        "sugared_genericSig": "<Self : AnyObject>",
+        "genericSig": "<τ_0_0 : AnyObject, τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : AnyObject, Self : Swift.Sendable>",
+        "intro_iOS": "13.0",
         "declAttributes": [
           "AccessControl",
+          "Available",
           "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
         ]
       },
       {
@@ -3720,6 +3512,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -3874,6 +3680,20 @@
         "isFromExtension": true,
         "isExternal": true,
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "_ObjectiveCBridgeable",
@@ -4088,6 +3908,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -4168,6 +4002,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -4222,399 +4070,238 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/OfflineCertificateProvider.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/OfflineCertificateProvider.swift",
       "kind": "StringLiteral",
-      "offset": 3290,
+      "offset": 3280,
       "length": 21,
       "value": "\"offline_certificate\""
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/OfflineCertificateProvider.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
+      "kind": "IntegerLiteral",
+      "offset": 836,
+      "length": 4,
+      "value": "0x01"
+    },
+    {
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
+      "kind": "IntegerLiteral",
+      "offset": 873,
+      "length": 4,
+      "value": "0x02"
+    },
+    {
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
+      "kind": "IntegerLiteral",
+      "offset": 910,
+      "length": 4,
+      "value": "0x04"
+    },
+    {
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
+      "kind": "IntegerLiteral",
+      "offset": 947,
+      "length": 4,
+      "value": "0x05"
+    },
+    {
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/Util\/BeaconLock.swift",
       "kind": "StringLiteral",
-      "offset": 3290,
-      "length": 21,
-      "value": "\"offline_certificate\""
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
-      "kind": "IntegerLiteral",
-      "offset": 826,
-      "length": 4,
-      "value": "0x01"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
-      "kind": "IntegerLiteral",
-      "offset": 863,
-      "length": 4,
-      "value": "0x02"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
-      "kind": "IntegerLiteral",
-      "offset": 900,
-      "length": 4,
-      "value": "0x04"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
-      "kind": "IntegerLiteral",
-      "offset": 937,
-      "length": 4,
-      "value": "0x05"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
-      "kind": "IntegerLiteral",
-      "offset": 826,
-      "length": 4,
-      "value": "0x01"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
-      "kind": "IntegerLiteral",
-      "offset": 863,
-      "length": 4,
-      "value": "0x02"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
-      "kind": "IntegerLiteral",
-      "offset": 900,
-      "length": 4,
-      "value": "0x04"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
-      "kind": "IntegerLiteral",
-      "offset": 937,
-      "length": 4,
-      "value": "0x05"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
-      "kind": "IntegerLiteral",
-      "offset": 826,
-      "length": 4,
-      "value": "0x01"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
-      "kind": "IntegerLiteral",
-      "offset": 863,
-      "length": 4,
-      "value": "0x02"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
-      "kind": "IntegerLiteral",
-      "offset": 900,
-      "length": 4,
-      "value": "0x04"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Error.swift",
-      "kind": "IntegerLiteral",
-      "offset": 937,
-      "length": 4,
-      "value": "0x05"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Util\/BeaconLock.swift",
-      "kind": "StringLiteral",
-      "offset": 276,
+      "offset": 286,
       "length": 38,
       "value": "\"6dfe2064-5186-11ea-8dfe-4b73218bf946\""
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Util\/BeaconLock.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/Util\/BeaconLock.swift",
       "kind": "StringLiteral",
-      "offset": 343,
+      "offset": 353,
       "length": 38,
       "value": "\"6f9e62a8-5186-11ea-8ed0-4314341d01dd\""
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Util\/BeaconLock.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/Util\/BeaconLock.swift",
       "kind": "StringLiteral",
-      "offset": 410,
+      "offset": 420,
       "length": 38,
       "value": "\"71fb9eb2-5186-11ea-b1f4-bb928fefb7fd\""
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Util\/BeaconLock.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/Util\/BeaconLock.swift",
       "kind": "StringLiteral",
-      "offset": 477,
+      "offset": 487,
       "length": 38,
       "value": "\"73f789ec-5186-11ea-9973-87896ce82dd8\""
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Util\/BeaconLock.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/Util\/BeaconLock.swift",
       "kind": "StringLiteral",
-      "offset": 544,
+      "offset": 554,
       "length": 38,
       "value": "\"74689eac-5186-11ea-be2d-27ec120c3b0f\""
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/OfflineCertificateCache.swift",
-      "kind": "StringLiteral",
-      "offset": 281,
-      "length": 3,
-      "value": "\"SecureAccess.Key\""
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/OfflineCertificateCache.swift",
+      "kind": "IntegerLiteral",
+      "offset": 600,
+      "length": 8,
+      "value": "16777619"
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Response.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/Response.swift",
       "kind": "IntegerLiteral",
       "offset": 213,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Response.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/Response.swift",
       "kind": "IntegerLiteral",
       "offset": 278,
       "length": 4,
       "value": "0x01"
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/SecureT2U.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/SecureT2U.swift",
       "kind": "Dictionary",
-      "offset": 312,
+      "offset": 268,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Connection.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/Connection.swift",
       "kind": "IntegerLiteral",
-      "offset": 1237,
+      "offset": 1397,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderManager.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderManager.swift",
       "kind": "StringLiteral",
-      "offset": 783,
+      "offset": 1016,
       "length": 40,
       "value": "\"Fixed beacon manager data access queue\""
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderManager.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderManager.swift",
       "kind": "Dictionary",
-      "offset": 936,
+      "offset": 1169,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderManager.swift",
-      "kind": "StringLiteral",
-      "offset": 222,
-      "length": 13,
-      "value": "\"SecureAccess.ReaderManager\""
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Identifier.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/Identifier.swift",
       "kind": "IntegerLiteral",
       "offset": 214,
-      "length": 1,
-      "value": "9"
+      "length": 2,
+      "value": "10"
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Identifier.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/Identifier.swift",
       "kind": "StringLiteral",
-      "offset": 338,
+      "offset": 339,
       "length": 38,
       "value": "\"6874ba46-5db9-48f5-8013-fc93882f3fb8\""
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Identifier.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/Identifier.swift",
       "kind": "StringLiteral",
-      "offset": 451,
+      "offset": 452,
       "length": 38,
       "value": "\"00000002-af61-4a99-828f-3d0cf5ecd183\""
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/TapToAccessManager.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/TapToAccessManager.swift",
       "kind": "StringLiteral",
-      "offset": 214,
+      "offset": 681,
       "length": 20,
       "value": "\"kisi_tap_to_unlock\""
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/TapToAccessManager.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/TapToAccessManager.swift",
       "kind": "StringLiteral",
-      "offset": 378,
+      "offset": 751,
       "length": 32,
       "value": "\"de.kisi.t2u.service_identifier\""
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/TapToAccessManager.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/TapToAccessManager.swift",
       "kind": "StringLiteral",
-      "offset": 452,
+      "offset": 841,
       "length": 40,
       "value": "\"de.kisi.t2u.characteristics_identifier\""
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/TapToAccessManager.swift",
-      "kind": "StringLiteral",
-      "offset": 378,
-      "length": 32,
-      "value": "\"de.kisi.t2u.service_identifier\""
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/TapToAccessManager.swift",
-      "kind": "StringLiteral",
-      "offset": 452,
-      "length": 40,
-      "value": "\"de.kisi.t2u.characteristics_identifier\""
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/TapToAccessManager.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/TapToAccessManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 698,
+      "offset": 1188,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/TapToAccessManager.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/TapToAccessManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1151,
+      "offset": 1672,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/TapToAccessManager.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/TapToAccessManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1227,
+      "offset": 1748,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/TapToAccessManager.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/TapToAccessManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1277,
+      "offset": 1798,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/TapToAccessManager.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/TapToAccessManager.swift",
       "kind": "StringLiteral",
-      "offset": 1832,
-      "length": 34,
-      "value": "\"Initializing CBPeripheralManager\""
+      "offset": 2382,
+      "length": 47,
+      "value": "\"de.kisibox.TapToUnlock.peripheralManagerQueue\""
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/TapToAccessManager.swift",
-      "kind": "StringLiteral",
-      "offset": 279,
-      "length": 18,
-      "value": "\"SecureAccess.TapToAccessManager\""
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/Util\/HKDF.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/Util\/HKDF.swift",
       "kind": "IntegerLiteral",
       "offset": 295,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
       "kind": "IntegerLiteral",
       "offset": 176,
       "length": 6,
       "value": "0x0030"
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
       "kind": "IntegerLiteral",
       "offset": 211,
       "length": 6,
       "value": "0x0031"
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
       "kind": "IntegerLiteral",
       "offset": 249,
       "length": 6,
       "value": "0x0033"
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
       "kind": "IntegerLiteral",
       "offset": 292,
       "length": 6,
       "value": "0x0034"
     },
     {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
-      "kind": "IntegerLiteral",
-      "offset": 336,
-      "length": 6,
-      "value": "0x0035"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
-      "kind": "IntegerLiteral",
-      "offset": 176,
-      "length": 6,
-      "value": "0x0030"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
-      "kind": "IntegerLiteral",
-      "offset": 211,
-      "length": 6,
-      "value": "0x0031"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
-      "kind": "IntegerLiteral",
-      "offset": 249,
-      "length": 6,
-      "value": "0x0033"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
-      "kind": "IntegerLiteral",
-      "offset": 292,
-      "length": 6,
-      "value": "0x0034"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
-      "kind": "IntegerLiteral",
-      "offset": 336,
-      "length": 6,
-      "value": "0x0035"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
-      "kind": "IntegerLiteral",
-      "offset": 176,
-      "length": 6,
-      "value": "0x0030"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
-      "kind": "IntegerLiteral",
-      "offset": 211,
-      "length": 6,
-      "value": "0x0031"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
-      "kind": "IntegerLiteral",
-      "offset": 249,
-      "length": 6,
-      "value": "0x0033"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
-      "kind": "IntegerLiteral",
-      "offset": 292,
-      "length": 6,
-      "value": "0x0034"
-    },
-    {
-      "filePath": "\/Users\/mikaoj\/Code\/Kisi\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
+      "filePath": "\/Users\/oddyseus\/Code\/kisi-ios-secure-access-sdk\/SecureAccess\/ReaderCommand.swift",
       "kind": "IntegerLiteral",
       "offset": 336,
       "length": 6,
