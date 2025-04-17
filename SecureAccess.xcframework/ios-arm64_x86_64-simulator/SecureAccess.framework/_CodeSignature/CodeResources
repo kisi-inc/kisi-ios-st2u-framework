@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/SecureAccess-Swift.h</key>
 		<data>
-		TEVlN7GW2a0aCcXU/0mNI1DrUnQ=
+		jbXZvVDxW30sVxQjh9VJo5fOkEE=
 		</data>
 		<key>Headers/SecureAccess.h</key>
 		<data>
@@ -14,47 +14,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		licjSK8PoLwflhL3uDL0Y+GeNVc=
+		3GWvBSSpi9+ForAtHfqB70qc6CY=
 		</data>
 		<key>Modules/SecureAccess.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		1+whEkRMonzu4N46QGRtG0/Ueus=
+		VZJCzFTnIi9c2GaESDy9QuIqQY8=
 		</data>
 		<key>Modules/SecureAccess.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		OHJW6hR/HgPe0Hfxgb32YOCEe18=
+		ipEqZmOf75aN4EEovfMlGCBPzDI=
 		</data>
 		<key>Modules/SecureAccess.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		vTG33WgHL2uY4WRdzlKv0Xz9p7Q=
+		xDUhiXVG8uJTv8v3U00B+bPKxF8=
 		</data>
 		<key>Modules/SecureAccess.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		OHJW6hR/HgPe0Hfxgb32YOCEe18=
+		ipEqZmOf75aN4EEovfMlGCBPzDI=
 		</data>
 		<key>Modules/SecureAccess.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		m4vbnm6m/O5WMUWjSbdYOOSweuI=
+		pNGvXmHUe/4mSuud24R91sCQ5WU=
 		</data>
 		<key>Modules/SecureAccess.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		1+whEkRMonzu4N46QGRtG0/Ueus=
+		VZJCzFTnIi9c2GaESDy9QuIqQY8=
 		</data>
 		<key>Modules/SecureAccess.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		Am8P/9PEm284GaiJphtg3LQJR58=
+		MyS7+/PuKXuStbqjmAw9VofMg+U=
 		</data>
 		<key>Modules/SecureAccess.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		o6NrxDkBmQCc1NVlPjc6XCv5jIk=
+		rZFEi94sS3/XuS2WMpwPEw24MUI=
 		</data>
 		<key>Modules/SecureAccess.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Am8P/9PEm284GaiJphtg3LQJR58=
+		MyS7+/PuKXuStbqjmAw9VofMg+U=
 		</data>
 		<key>Modules/SecureAccess.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		uaKck9LejxG8X53Y2qB2iX/aP2Q=
+		odU/ure43TOXywexYOp5cX3KCvg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3wJjpphXgVV3dmEZGjxg2sT1YEdN48itb+PDU9O8c/0=
+			EFoDgdlXfAtZegOiSmQhvWXuJWyW7ljFl60CEnvuONY=
 			</data>
 		</dict>
 		<key>Headers/SecureAccess.h</key>
@@ -81,70 +81,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+uYotQaRKc7zlKh++JUq6sGxXrpooVMwJiXQwM2ngqU=
+			FeYbfWmjnBNFVuVgKsQ0q0gth1CyG60Z4L4jb+dYIw0=
 			</data>
 		</dict>
 		<key>Modules/SecureAccess.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Pny0bVcLV1DjfbuX6ObnSD7Lwen79rRD2oqAK47Qe9g=
+			bkP0cS/IIRzNG7lJsaH6aNd6WMjyjFGLj8BO3ra/Yfg=
 			</data>
 		</dict>
 		<key>Modules/SecureAccess.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JdGTALPZyXZG/mnMxU4H/daEiZjP9dJIdesARV3op/Y=
+			uQSNrNCBYZ2iNI0S1DMHoWd9U+D5NRcHtdsLst/BYCM=
 			</data>
 		</dict>
 		<key>Modules/SecureAccess.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Pny0bVcLV1DjfbuX6ObnSD7Lwen79rRD2oqAK47Qe9g=
+			bkP0cS/IIRzNG7lJsaH6aNd6WMjyjFGLj8BO3ra/Yfg=
 			</data>
 		</dict>
 		<key>Modules/SecureAccess.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qLwgkK5wLWqekve26tIY/lyXYg+nBhI5ER/tYZYuetg=
+			t6TZzrs+aqcCz1lI4h6QF9y7MXE2j0kUloXPD2YSIPA=
 			</data>
 		</dict>
 		<key>Modules/SecureAccess.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+uYotQaRKc7zlKh++JUq6sGxXrpooVMwJiXQwM2ngqU=
+			FeYbfWmjnBNFVuVgKsQ0q0gth1CyG60Z4L4jb+dYIw0=
 			</data>
 		</dict>
 		<key>Modules/SecureAccess.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QfTA+e8bwnD+WYskpa903OMmFuaAX7WTwq9+I4dm05c=
+			dHU4jKYeDXXYuODLKD3zqihYpxl7BVKca7Ty4E0j+O0=
 			</data>
 		</dict>
 		<key>Modules/SecureAccess.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MdX0UWJr7k7c+6kWqtS6gDz081hV4tOjueJwkYX9Iyk=
+			EZemA3iTJIfIeQItsRls0m/K4p3knkB2ct2HQG4PYvA=
 			</data>
 		</dict>
 		<key>Modules/SecureAccess.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QfTA+e8bwnD+WYskpa903OMmFuaAX7WTwq9+I4dm05c=
+			dHU4jKYeDXXYuODLKD3zqihYpxl7BVKca7Ty4E0j+O0=
 			</data>
 		</dict>
 		<key>Modules/SecureAccess.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KJJ7G+JBe1ihOvYIhxA7MzpexuiIOTOQhourqj1Cn7o=
+			u1vVCSAYVHwC9wHaY0/QfeHEYCokv9eeCTtkEpL8INE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
