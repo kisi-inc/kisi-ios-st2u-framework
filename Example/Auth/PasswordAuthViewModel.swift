@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+@MainActor
 class PasswordAuthViewModel: ObservableObject {
     private let authStorage = AuthStorage.shared
     private let authRemote = AuthRemote()

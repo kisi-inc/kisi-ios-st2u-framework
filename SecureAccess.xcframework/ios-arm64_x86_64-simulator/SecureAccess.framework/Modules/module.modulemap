@@ -7,5 +7,4 @@ framework module SecureAccess {
 
 module SecureAccess.Swift {
   header "SecureAccess-Swift.h"
-  requires objc
 }

@@ -5,16 +5,12 @@
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>bluetooth-peripheral</string>
-		<string>fetch</string>
-		<string>location</string>
 	</array>
     <key>NSLocationWhenInUseUsageDescription</key>
-    <string>But we really need always for the best performance</string>
+    <string>Used to detect Kisi Readers near you, so the doors you can open are the ones in front of you. Your location is never stored or shared.</string>
     <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>Can I haz please?</string>
+    <string>Used to detect Kisi Readers near you, so unlocking is ready the moment you reach a door. Your location is never stored or shared.</string>
     <key>NSBluetoothAlwaysUsageDescription</key>
-    <string>BLE FTW!.</string>
-    <key>NSBluetoothPeripheralUsageDescription</key>
-    <string>Give me or else</string>
+    <string>Used to unlock doors when you hold your phone against a Kisi Reader.</string>
 </dict>
 </plist>

@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import SecureAccess
 
+@MainActor
 class LocksViewModel: ObservableObject {
     private var lockRemote = LockRemote()
     private var readerManager = ReaderManager.shared

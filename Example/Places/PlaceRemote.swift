@@ -7,11 +7,12 @@
 
 import Foundation
 
+@MainActor
 class PlaceRemote {
     private let authStorage = AuthStorage.shared
     private let session = URLSession.shared
     
-    func fetchPlaces(completion: @escaping (Result<[Place], Error>) -> Void) {
+    func fetchPlaces(completion: @escaping @MainActor (Result<[Place], Error>) -> Void) {
         guard let login = authStorage.currentLogin() else { return }
         
         var request = URLRequest(url: URL(string: "https://api.kisi.io/places")!)
@@ -21,11 +22,11 @@ class PlaceRemote {
         
         let task = session.dataTask(with: request) { data, response, error in
             if let data = data, let places = try? JSONDecoder().decode([Place].self, from: data) {
-                DispatchQueue.main.async {
+                Task { @MainActor in
                     completion(.success(places))
                 }
             } else {
-                DispatchQueue.main.async {
+                Task { @MainActor in
                     completion(.failure(NSError(domain: "b0rk", code: 1337)))
                 }
             }

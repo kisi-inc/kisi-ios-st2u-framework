@@ -7,11 +7,12 @@
 
 import Foundation
 
+@MainActor
 class LockRemote {
     private let authStorage = AuthStorage.shared
     private let session = URLSession.shared
     
-    func fetchLocks(forPlace place: Place, completion: @escaping (Result<[Lock], Error>) -> Void) {
+    func fetchLocks(forPlace place: Place, completion: @escaping @MainActor (Result<[Lock], Error>) -> Void) {
         guard let login = authStorage.currentLogin() else { return }
         
         var request = URLRequest(url: URL(string: "https://api.kisi.io/locks?place_id=\(place.id)")!)
@@ -21,11 +22,11 @@ class LockRemote {
         
         let task = session.dataTask(with: request) { data, response, error in
             if let data = data, let locks = try? JSONDecoder().decode([Lock].self, from: data) {
-                DispatchQueue.main.async {
+                Task { @MainActor in
                     completion(.success(locks))
                 }
             } else {
-                DispatchQueue.main.async {
+                Task { @MainActor in
                     completion(.failure(NSError(domain: "b0rk", code: 1337)))
                 }
             }

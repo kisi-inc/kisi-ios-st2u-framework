@@ -8,7 +8,8 @@
 import Foundation
 
 // Insecure auth storage...don't use UserDefaults for storing tokens in a production app!
-class AuthStorage {
+@MainActor
+final class AuthStorage {
     static let shared = AuthStorage()
     
     struct Keys {

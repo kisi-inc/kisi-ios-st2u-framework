@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2CF610000000000000000E2 /* KisiSecureAccess.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2CF610000000000000000E1 /* KisiSecureAccess.plist */; };
 		D279D1412D882229008CB58E /* SecureAccess in Frameworks */ = {isa = PBXBuildFile; productRef = D279D1402D882229008CB58E /* SecureAccess */; };
 		D790134227EC661500B67054 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D790134127EC661500B67054 /* ExampleApp.swift */; };
 		D790134627EC661800B67054 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D790134527EC661800B67054 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D2CF610000000000000000E1 /* KisiSecureAccess.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = KisiSecureAccess.plist; sourceTree = "<group>"; };
 		D790133E27EC661500B67054 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D790134127EC661500B67054 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		D790134527EC661800B67054 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				D790136E27ECA86A00B67054 /* Info.plist */,
+				D2CF610000000000000000E1 /* KisiSecureAccess.plist */,
 				D790135127EC6B5700B67054 /* Locks */,
 				D790135027EC6B5100B67054 /* Places */,
 				D790134F27EC6B4A00B67054 /* Auth */,
@@ -211,6 +214,7 @@
 			files = (
 				D790134927EC661800B67054 /* Preview Assets.xcassets in Resources */,
 				D790134627EC661800B67054 /* Assets.xcassets in Resources */,
+				D2CF610000000000000000E2 /* KisiSecureAccess.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +390,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.kisibox.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -416,7 +420,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.kisibox.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

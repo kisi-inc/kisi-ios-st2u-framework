@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+@MainActor
 class PlacesViewModel: ObservableObject {
     private let placeRemote = PlaceRemote()
     @Published var places: [Place] = []

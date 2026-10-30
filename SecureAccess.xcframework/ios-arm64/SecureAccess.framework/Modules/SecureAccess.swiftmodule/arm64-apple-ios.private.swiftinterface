@@ -1,22 +1,71 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.3 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -module-name SecureAccess
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -language-mode 6 -O -enable-experimental-feature DebugDescriptionMacro -module-name SecureAccess
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4.2
 import CommonCrypto
 import CoreBluetooth
 import CoreLocation
+@preconcurrency import CoreNFC
 import CryptoKit
 import Foundation
+import LocalAuthentication
 @_exported import SecureAccess
 import Security
 import Swift
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-public enum TapToAccessError : Swift.Error, Swift.Sendable {
-  case invalidTransition(type: Swift.String)
+public typealias TapToAccessNotificationPayload = [Swift::String : Swift::String]
+extension SecureAccess::TapToAccessManager {
+  @_Concurrency::MainActor final public func _isCacheUpdateNotification(payload: SecureAccess::TapToAccessNotificationPayload) -> Swift::Bool
+  @_Concurrency::MainActor final public func _handleCacheUpdateNotification(payload: SecureAccess::TapToAccessNotificationPayload) async throws
+  @discardableResult
+  @_Concurrency::MainActor final public func _updateMobileCacheIfNeeded(forOrganizationWithId organizationId: Swift::Int, usingLogin login: SecureAccess::Login) async throws -> Swift::Bool
+}
+public struct CacheUpdateNotificationError : Swift::Error, Swift::Sendable, Swift::Equatable, Foundation::LocalizedError {
+  public let code: SecureAccess::CacheUpdateNotificationError.SecureAccess::Code
+  public enum Code : Swift::Sendable, Swift::Equatable {
+    case invalidNotificationType
+    case invalidOrganizationId
+    case noLoginForOrganizationId
+    public static func == (a: SecureAccess::CacheUpdateNotificationError.SecureAccess::Code, b: SecureAccess::CacheUpdateNotificationError.SecureAccess::Code) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public static var invalidNotificationType: SecureAccess::CacheUpdateNotificationError {
+    get
+  }
+  public static var invalidOrganizationId: SecureAccess::CacheUpdateNotificationError {
+    get
+  }
+  public static var noLoginForOrganizationId: SecureAccess::CacheUpdateNotificationError {
+    get
+  }
+  public var errorDescription: Swift::String? {
+    get
+  }
+  public static func == (a: SecureAccess::CacheUpdateNotificationError, b: SecureAccess::CacheUpdateNotificationError) -> Swift::Bool
+}
+extension Swift::Dictionary where Key == Swift::AnyHashable, Value == Any {
+  public var _asTapToAccessNotificationPayload: SecureAccess::TapToAccessNotificationPayload {
+    get
+  }
+}
+@available(iOS 17.4, *)
+extension SecureAccess::TapToAccessManager {
+  @_Concurrency::MainActor final public var _isNFCUnlockAvailable: Swift::Bool {
+    get async
+  }
+  @discardableResult
+  @_Concurrency::MainActor final public func _presentNFCUnlock() async throws(SecureAccess::_NFCUnlockError) -> SecureAccess::TapToAccessAuthentication
+}
+public enum TapToAccessError : Swift::Error, Swift::Sendable {
+  case invalidTransition(type: Swift::String)
   case orgInvalidPayload
-  case missingLogin(organization: Swift.Int?)
+  case missingOrganizationId
+  case missingLogin(organization: Swift::Int)
   case readerProofInvalidPayload
   case certificateInvalidPayload
   case failedToEncrypt
@@ -27,106 +76,180 @@ public enum TapToAccessError : Swift.Error, Swift.Sendable {
   case failedToVerifyReaderProof
   case needsDeviceOwnerVerification
   case unexpectedCommand
-  case missingDelegate
+  case missingDataSource
   case offsetReadOutOfBounds
   case unrecognizedEvent
 }
-extension SecureAccess.TapToAccessError : Swift.Equatable {
-  public static func == (a: SecureAccess.TapToAccessError, b: SecureAccess.TapToAccessError) -> Swift.Bool
+extension SecureAccess::TapToAccessError : Swift::Equatable {
+  public static func == (a: SecureAccess::TapToAccessError, b: SecureAccess::TapToAccessError) -> Swift::Bool
 }
-extension Foundation.NSNotification.Name {
-  public static var ReaderManagerDidEnterNotification: Foundation.Notification.Name {
+public enum _NFCUnlockError : Swift::Error, Swift::Equatable, Swift::Sendable {
+  case notAvailable
+  case busy
+  case sessionFailed
+  case cancelled
+  case failed(SecureAccess::TapToAccessError)
+  public static func == (a: SecureAccess::_NFCUnlockError, b: SecureAccess::_NFCUnlockError) -> Swift::Bool
+}
+extension Foundation::NSNotification.Foundation::Name {
+  public static var ReaderManagerDidEnterNotification: Foundation::Notification.Foundation::Name {
     get
   }
-  public static var ReaderManagerDidExitNotification: Foundation.Notification.Name {
+  public static var ReaderManagerDidExitNotification: Foundation::Notification.Foundation::Name {
     get
   }
-}
-@objc extension Foundation.NSNotification {
-  @objc public static let ReaderManagerDidEnterNotification: Foundation.Notification.Name
-  @objc public static let ReaderManagerDidExitNotification: Foundation.Notification.Name
-}
-@_hasMissingDesignatedInitializers @available(iOS 13.0, *)
-public actor SecureAccessLogger {
-  public static let shared: SecureAccess.SecureAccessLogger
-  public func setInfoLogger(_ closure: @escaping @Sendable (_ message: Swift.String, _ file: Swift.String, _ function: Swift.String) -> Swift.Void)
-  public func setErrorLogger(_ closure: @escaping @Sendable (_ message: Swift.String, _ file: Swift.String, _ function: Swift.String) -> Swift.Void)
-  @objc deinit
-  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
-  @_semantics("defaultActor") nonisolated final public var unownedExecutor: _Concurrency.UnownedSerialExecutor {
+  public static var TapToAccessDidAuthenticateNotification: Foundation::Notification.Foundation::Name {
     get
   }
-}
-public struct Login : Swift.Sendable {
-  public let id: Swift.Int
-  public let token: Swift.String
-  public let key: Swift.String
-  public var certificate: Swift.String
-  public init(id: Swift.Int, token: Swift.String, key: Swift.String, certificate: Swift.String)
-}
-extension SecureAccess.Login : Swift.CustomStringConvertible {
-  public var description: Swift.String {
+  public static var TapToAccessDidFailNotification: Foundation::Notification.Foundation::Name {
     get
   }
 }
-public struct BeaconLock : Swift.Identifiable, Swift.Equatable, Swift.Codable, Swift.Sendable {
-  public let id: Swift.Int
-  public let oneTimePassword: Swift.Int
-  public static func == (a: SecureAccess.BeaconLock, b: SecureAccess.BeaconLock) -> Swift.Bool
-  public typealias ID = Swift.Int
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-@objc @_hasMissingDesignatedInitializers @available(iOS 13.0, *)
-final public class ReaderManager : ObjectiveC.NSObject, @unchecked Swift.Sendable {
-  public static let shared: SecureAccess.ReaderManager
-  final public var enteredBeaconsLocks: [CoreLocation.CLBeaconRegion : [SecureAccess.BeaconLock]] {
+extension Foundation::Notification {
+  public var tapToAccessCertificateType: SecureAccess::CertificateType? {
     get
   }
-  @objc deinit
+  public var tapToAccessDuration: Foundation::TimeInterval? {
+    get
+  }
+  public var tapToAccessError: SecureAccess::TapToAccessError? {
+    get
+  }
 }
-@available(iOS 13.0, *)
-extension SecureAccess.ReaderManager {
-  final public func startMonitoring()
-  final public func stopMonitoring()
-  final public func startRanging()
-  final public func stopRanging()
-  final public func isNearbyLock(_ id: Swift.Int) -> Swift.Bool
-  final public func proximityProofForLock(_ id: Swift.Int) -> Swift.Int?
+public struct TapToAccessAuthentication : Swift::Sendable, Swift::Equatable {
+  public let certificateType: SecureAccess::CertificateType
+  public let duration: Foundation::TimeInterval
+  public static func == (a: SecureAccess::TapToAccessAuthentication, b: SecureAccess::TapToAccessAuthentication) -> Swift::Bool
 }
-@available(iOS 13.0, *)
-extension SecureAccess.ReaderManager : CoreLocation.CLLocationManagerDelegate {
-  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
-  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: any Swift.Error)
-  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didStartMonitoringFor region: CoreLocation.CLRegion)
-  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, monitoringDidFailFor region: CoreLocation.CLRegion?, withError error: any Swift.Error)
-  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didEnterRegion region: CoreLocation.CLRegion)
-  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didExitRegion region: CoreLocation.CLRegion)
-  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didRangeBeacons beacons: [CoreLocation.CLBeacon], in region: CoreLocation.CLBeaconRegion)
-  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, rangingBeaconsDidFailFor region: CoreLocation.CLBeaconRegion, withError error: any Swift.Error)
-}
-@objc @_hasMissingDesignatedInitializers @available(iOS 13.0, *)
-final public class TapToAccessManager : ObjectiveC.NSObject, @unchecked Swift.Sendable {
-  @objc public static let shared: SecureAccess.TapToAccessManager
-  weak final public var delegate: (any SecureAccess.TapToAccessDelegate)?
-  @objc final public func start()
-  @objc final public func startIfNeeded()
-  @objc final public func stop()
+public typealias SecureAccessLogHandler = @Sendable (_ message: Swift::String, _ file: Swift::String, _ function: Swift::String) -> Swift::Void
+@_hasMissingDesignatedInitializers final public class SecureAccessLogger : Swift::Sendable {
+  public static let shared: SecureAccess::SecureAccessLogger
+  final public var info: SecureAccess::SecureAccessLogHandler? {
+    get
+    set
+  }
+  final public var error: SecureAccess::SecureAccessLogHandler? {
+    get
+    set
+  }
   @objc deinit
 }
-@available(iOS 13.0, *)
-extension SecureAccess.TapToAccessManager : CoreBluetooth.CBPeripheralManagerDelegate {
-  @objc final public func peripheralManagerDidUpdateState(_ peripheral: CoreBluetooth.CBPeripheralManager)
-  @objc final public func peripheralManager(_ peripheral: CoreBluetooth.CBPeripheralManager, didReceiveRead request: CoreBluetooth.CBATTRequest)
-  @objc final public func peripheralManager(_ peripheral: CoreBluetooth.CBPeripheralManager, didReceiveWrite requests: [CoreBluetooth.CBATTRequest])
-  @objc final public func peripheralManager(_ peripheral: CoreBluetooth.CBPeripheralManager, didAdd service: CoreBluetooth.CBService, error: (any Swift.Error)?)
-  @objc final public func peripheralManagerDidStartAdvertising(_ peripheral: CoreBluetooth.CBPeripheralManager, error: (any Swift.Error)?)
-  @objc final public func peripheralManager(_ peripheral: CoreBluetooth.CBPeripheralManager, willRestoreState dict: [Swift.String : Any])
+public struct Login : Swift::Sendable {
+  public let id: Swift::Int
+  public let token: Swift::String
+  public let key: Swift::String
+  public var certificate: Swift::String
+  public init(id: Swift::Int, token: Swift::String, key: Swift::String, certificate: Swift::String)
 }
-@available(iOS 13.0, *)
-public protocol TapToAccessDelegate : AnyObject, Swift.Sendable {
-  func tapToAccessSuccess(online: Swift.Bool, duration: Foundation.TimeInterval)
-  func tapToAccessFailure(error: SecureAccess.TapToAccessError, duration: Foundation.TimeInterval)
-  func tapToAccessClientID() async -> Swift.Int
-  func tapToAccessLoginForOrganization(_ organization: Swift.Int?) async -> SecureAccess.Login?
+extension SecureAccess::Login : Swift::CustomStringConvertible {
+  public var description: Swift::String {
+    get
+  }
 }
+public struct BeaconLock : Swift::Identifiable, Swift::Equatable, Swift::Codable, Swift::Sendable {
+  public let id: Swift::Int
+  public let oneTimePassword: Swift::Int
+  public static func == (a: SecureAccess::BeaconLock, b: SecureAccess::BeaconLock) -> Swift::Bool
+  public typealias ID = Swift::Int
+  public func encode(to encoder: any Swift::Encoder) throws
+  public init(from decoder: any Swift::Decoder) throws
+}
+public enum AuthorizationStatus : Swift::Sendable, Swift::Equatable {
+  case notDetermined
+  case denied
+  case whenInUse
+  case authorized
+  public var isAuthorized: Swift::Bool {
+    get
+  }
+  public static func == (a: SecureAccess::AuthorizationStatus, b: SecureAccess::AuthorizationStatus) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+public enum LocationAuthorizationLevel : Swift::Sendable, Swift::Equatable {
+  case whenInUse
+  case always
+  public static func == (a: SecureAccess::LocationAuthorizationLevel, b: SecureAccess::LocationAuthorizationLevel) -> Swift::Bool
+  public func hash(into hasher: inout Swift::Hasher)
+  public var hashValue: Swift::Int {
+    get
+  }
+}
+public typealias LockId = Swift::UInt32
+public typealias ReaderId = Swift::UInt32
+public typealias OrganizationId = Swift::UInt32
+public typealias LoginId = Swift::UInt32
+public typealias UserId = Swift::UInt32
+public typealias CacheVersionId = Swift::UInt32
+public enum CertificateType : Swift::String, Swift::Sendable {
+  case online
+  case offline
+  case mobile
+  public init?(rawValue: Swift::String)
+  public typealias RawValue = Swift::String
+  public var rawValue: Swift::String {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency::MainActor final public class ReaderManager : ObjectiveC::NSObject {
+  @_Concurrency::MainActor public static let shared: SecureAccess::ReaderManager
+  @_Concurrency::MainActor final public var nearbyLocks: [SecureAccess::BeaconLock] {
+    get
+  }
+  @objc deinit
+}
+extension SecureAccess::ReaderManager {
+  @_Concurrency::MainActor final public var locationAuthorization: SecureAccess::AuthorizationStatus {
+    get
+  }
+  @_Concurrency::MainActor final public func requestLocationAuthorization(_ level: SecureAccess::LocationAuthorizationLevel)
+  @_Concurrency::MainActor final public func startMonitoring()
+  @_Concurrency::MainActor final public func stopMonitoring()
+  @_Concurrency::MainActor final public func startRanging()
+  @_Concurrency::MainActor final public func stopRanging()
+  @_Concurrency::MainActor final public func isNearbyLock(_ id: Swift::Int) -> Swift::Bool
+  @_Concurrency::MainActor final public func proximityProofForLock(_ id: Swift::Int) -> Swift::Int?
+}
+extension SecureAccess::ReaderManager : @preconcurrency CoreLocation::CLLocationManagerDelegate {
+  @_Concurrency::MainActor @objc final public func locationManagerDidChangeAuthorization(_ manager: CoreLocation::CLLocationManager)
+  @_Concurrency::MainActor @objc final public func locationManager(_ manager: CoreLocation::CLLocationManager, didFailWithError error: any Swift::Error)
+  @_Concurrency::MainActor @objc final public func locationManager(_ manager: CoreLocation::CLLocationManager, didStartMonitoringFor region: CoreLocation::CLRegion)
+  @_Concurrency::MainActor @objc final public func locationManager(_ manager: CoreLocation::CLLocationManager, monitoringDidFailFor region: CoreLocation::CLRegion?, withError error: any Swift::Error)
+  @_Concurrency::MainActor @objc final public func locationManager(_ manager: CoreLocation::CLLocationManager, didEnterRegion region: CoreLocation::CLRegion)
+  @_Concurrency::MainActor @objc final public func locationManager(_ manager: CoreLocation::CLLocationManager, didExitRegion region: CoreLocation::CLRegion)
+  @_Concurrency::MainActor @objc final public func locationManager(_ manager: CoreLocation::CLLocationManager, didRangeBeacons beacons: [CoreLocation::CLBeacon], in region: CoreLocation::CLBeaconRegion)
+  @_Concurrency::MainActor @objc final public func locationManager(_ manager: CoreLocation::CLLocationManager, rangingBeaconsDidFailFor region: CoreLocation::CLBeaconRegion, withError error: any Swift::Error)
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency::MainActor final public class TapToAccessManager : ObjectiveC::NSObject {
+  @_Concurrency::MainActor public static let shared: SecureAccess::TapToAccessManager
+  @_Concurrency::MainActor weak final public var dataSource: (any SecureAccess::TapToAccessDataSource)?
+  @objc isolated deinit
+  @_Concurrency::MainActor final public func start()
+  @_Concurrency::MainActor final public func startIfNeeded()
+  @_Concurrency::MainActor final public func stop()
+  @_Concurrency::MainActor final public var bluetoothAuthorization: SecureAccess::AuthorizationStatus {
+    get
+  }
+  @_Concurrency::MainActor final public func requestBluetoothAuthorization()
+}
+extension SecureAccess::TapToAccessManager : @preconcurrency CoreBluetooth::CBPeripheralManagerDelegate {
+  @_Concurrency::MainActor @objc final public func peripheralManagerDidUpdateState(_ peripheral: CoreBluetooth::CBPeripheralManager)
+  @_Concurrency::MainActor @objc final public func peripheralManager(_ peripheral: CoreBluetooth::CBPeripheralManager, didReceiveRead request: CoreBluetooth::CBATTRequest)
+  @_Concurrency::MainActor @objc final public func peripheralManager(_ peripheral: CoreBluetooth::CBPeripheralManager, didReceiveWrite requests: [CoreBluetooth::CBATTRequest])
+  @_Concurrency::MainActor @objc final public func peripheralManager(_ peripheral: CoreBluetooth::CBPeripheralManager, didAdd service: CoreBluetooth::CBService, error: (any Swift::Error)?)
+  @_Concurrency::MainActor @objc final public func peripheralManagerDidStartAdvertising(_ peripheral: CoreBluetooth::CBPeripheralManager, error: (any Swift::Error)?)
+  @_Concurrency::MainActor @objc final public func peripheralManager(_ peripheral: CoreBluetooth::CBPeripheralManager, willRestoreState dict: [Swift::String : Any])
+}
+public protocol TapToAccessDataSource : AnyObject, Swift::Sendable {
+  func tapToAccessLoginForOrganization(_ organization: Swift::Int) async -> SecureAccess::Login?
+}
+extension SecureAccess::TapToAccessManager : Swift::Sendable {}
+extension SecureAccess::CacheUpdateNotificationError.SecureAccess::Code : Swift::Hashable {}
+extension SecureAccess::AuthorizationStatus : Swift::Hashable {}
+extension SecureAccess::LocationAuthorizationLevel : Swift::Hashable {}
+extension SecureAccess::CertificateType : Swift::Equatable {}
+extension SecureAccess::CertificateType : Swift::Hashable {}
+extension SecureAccess::CertificateType : Swift::RawRepresentable {}
+extension SecureAccess::ReaderManager : Swift::Sendable {}

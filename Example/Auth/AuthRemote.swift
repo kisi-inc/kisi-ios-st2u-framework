@@ -7,10 +7,11 @@
 
 import Foundation
 
+@MainActor
 class AuthRemote {
     private let session = URLSession.shared
     
-    func authenticate(email: String, password: String, domain: String, completion: @escaping (Result<Login, Error>) -> Void) {
+    func authenticate(email: String, password: String, domain: String, completion: @escaping @MainActor (Result<Login, Error>) -> Void) {
         let parameters = [
             "user": [
                 "domain": domain,
@@ -26,11 +27,11 @@ class AuthRemote {
         
         let task = session.dataTask(with: request) { data, response, error in
             if let data = data, let login = try? JSONDecoder().decode(Login.self, from: data) {
-                DispatchQueue.main.async {
+                Task { @MainActor in
                     completion(.success(login))
                 }
             } else {
-                DispatchQueue.main.async {
+                Task { @MainActor in
                     completion(.failure(NSError(domain: "b0rk", code: 1337)))
                 }
             }
@@ -39,7 +40,7 @@ class AuthRemote {
         task.resume()
     }
     
-    func resolve(code: String, completion: @escaping (Result<Login, Error>) -> Void) {
+    func resolve(code: String, completion: @escaping @MainActor (Result<Login, Error>) -> Void) {
         let parameters = [
             "login": [
                 "resolution_token": code
@@ -53,11 +54,11 @@ class AuthRemote {
         
         let task = session.dataTask(with: request) { data, response, error in
             if let data = data, let login = try? JSONDecoder().decode(Login.self, from: data) {
-                DispatchQueue.main.async {
+                Task { @MainActor in
                     completion(.success(login))
                 }
             } else {
-                DispatchQueue.main.async {
+                Task { @MainActor in
                     completion(.failure(NSError(domain: "b0rk", code: 1337)))
                 }
             }

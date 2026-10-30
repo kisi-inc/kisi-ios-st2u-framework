@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- 0 is a placeholder, so the SDK will complain about it in the console on
+	     every run until you replace it. Request a proper id by emailing
+	     sdks@kisi.io. It lets Kisi identify your integration in support logs,
+	     so we can better help you debug any issues you run into. -->
+	<key>ClientID</key>
+	<integer>0</integer>
+</dict>
+</plist>

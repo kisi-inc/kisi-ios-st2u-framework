@@ -6,28 +6,26 @@
 //
 
 import SwiftUI
-import CoreBluetooth
-import CoreLocation
 import SecureAccess
 
 @main
 struct ExampleApp: App {
-    @Environment(\.scenePhase) var scenePhase
-    
-    private let peripheralManager = CBPeripheralManager(delegate: nil, queue: .main, options: nil) // This will prompt bluetooth permission dialog. Don't do it like this in production app. Show a screen explaining why you need it first.
-    private let locationManager = CLLocationManager()
     private let tapToAccessDataProvider = TapToAccessDataProvider()
-    
+    @StateObject private var tapToAccess = TapToAccessObserver()
+
     init() {
-        // As with bluetooth permission. Don't just request it without explaining why
-        locationManager.requestAlwaysAuthorization()
-        
-        // In older App delegate style app you should do this in didFinishLaunching
-        TapToAccessManager.shared.delegate = tapToAccessDataProvider
+        // Don't do it like this in a production app - show a screen explaining why first.
+        TapToAccessManager.shared.requestBluetoothAuthorization()
+        ReaderManager.shared.requestLocationAuthorization(.always)
+
+        // In older App delegate style app you should do this in didFinishLaunching.
+        // Order against the prompts above doesn't matter - both managers remember what they
+        // were asked for.
+        TapToAccessManager.shared.dataSource = tapToAccessDataProvider
         TapToAccessManager.shared.start()
         ReaderManager.shared.startMonitoring()
     }
-    
+
     var body: some Scene {
         WindowGroup {
             NavigationView {
@@ -37,40 +35,64 @@ struct ExampleApp: App {
                     AuthenticationSelectionView()
                 }
             }
-        }
-        .onChange(of: scenePhase) { newPhase in
-            if newPhase == .active {
-                // Start ranging should only be done when app is in foreground. didBecomeActive if you are using the older app delegate.
-                // Ranging is needed to be able to do in-app unlocks with reader proof. Which you get by calling timeBasedOneTimePasswordForLock on BeaconManager.
-                ReaderManager.shared.startRanging()
-            } else if newPhase == .background {
-                // And stop ranging when app leaves foreground to conserve battery
-                ReaderManager.shared.stopRanging()
+            .alert("Unlock your phone", isPresented: $tapToAccess.needsDeviceOwnerVerification) {
+                Button("OK", role: .cancel) { }
+            } message: {
+                Text("This door requires your phone to have a passcode and be unlocked.")
             }
         }
     }
 }
 
-final class TapToAccessDataProvider: TapToAccessDelegate {
-    func tapToAccessSuccess(online: Bool, duration: TimeInterval) {
-        
+// Results are notifications, not callbacks - observe only what you care about.
+@MainActor
+final class TapToAccessObserver: ObservableObject {
+    @Published var needsDeviceOwnerVerification = false
+
+    private var observers: [NSObjectProtocol] = []
+
+    init() {
+        // Authentication succeeded. Deliberately drives no UI - this means the phone
+        // authenticated with the reader, not that the door opened.
+        observers.append(NotificationCenter.default.addObserver(
+            forName: .TapToAccessDidAuthenticateNotification,
+            object: nil,
+            queue: .main
+        ) { notification in
+            let certificateType = notification.tapToAccessCertificateType
+            let duration = notification.tapToAccessDuration ?? 0
+
+            print("Authenticated with the reader in \(duration)s, certificate: \(String(describing: certificateType))")
+        })
+
+        // Authentication failed. needsDeviceOwnerVerification is the one worth prompting on -
+        // the reader wants a passcode protected, unlocked phone.
+        observers.append(NotificationCenter.default.addObserver(
+            forName: .TapToAccessDidFailNotification,
+            object: nil,
+            queue: .main
+        ) { [weak self] notification in
+            guard notification.tapToAccessError == .needsDeviceOwnerVerification else { return }
+
+            Task { @MainActor in
+                self?.needsDeviceOwnerVerification = true
+            }
+        })
     }
-    
-    func tapToAccessFailure(error: TapToAccessError, duration: TimeInterval) {
-        if error == .needsDeviceOwnerVerification {
-            // This means that the reader has a setting turned on which requires that the phone has a passcode and is unlocked
-            // So prompt user to unlock device or setup passcode.
-            // Can be done via a notification if you have notification permission
-            // Otherwise show some in-app banner/screen explaining it.
-            print("User needs to unlock their device")
-        }
+
+    isolated deinit {
+        observers.forEach { NotificationCenter.default.removeObserver($0) }
     }
-    
-    func tapToAccessClientID() async -> Int {
-        return 0 // Request proper id by emailing sdks@kisi.io. This is so we can better help you debug any issues you might run into.
-    }
-    
-    func tapToAccessLoginForOrganization(_ organization: Int?) async -> SecureAccess.Login? {
+}
+
+// The login is all the SDK needs from you. Everything that doesn't change while the app
+// runs - the client id, for now - lives in KisiSecureAccess.plist instead.
+//
+// A plain main actor class is enough. Conform an actor instead if you would rather
+// keep the login lookup off the main thread.
+@MainActor
+final class TapToAccessDataProvider: TapToAccessDataSource {
+    func tapToAccessLoginForOrganization(_ organization: Int) async -> SecureAccess.Login? {
         // If you app supports being signed in to multiple organization use the id to lookup the corresponding login.
         // otherwise just return the login you have.
         guard let login = AuthStorage.shared.currentLogin() else { return nil }
